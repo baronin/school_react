@@ -1,0 +1,25 @@
+@import "../../assets/scss/vars";
+
+.time-left {
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  max-width: 70px;
+  padding: 2px 4px;
+
+  color: #000;
+  background-color: $color-white;
+  border-radius: 11px;
+  &__icon {
+    margin-right: 4px;
+  }
+
+  &__text {
+    font-size: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
