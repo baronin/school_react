@@ -1,0 +1,10 @@
+.weeks-challenge__check-list {
+  display: flex;
+  padding: 10px 32px 18px;
+}
+
+.weeks-challenge__check-item {
+  max-width: 33%;
+  width: calc(100% - 40px);
+  margin-right: 40px;
+}
