@@ -14,20 +14,20 @@ export interface MissionUserPathData {
   readonly currentMission: MissionData;
   readonly upcomingMissions: MissionData[];
 }
-interface MissionData {
+export interface MissionData {
   objectives: ObjectiveData[];
   completed: boolean;
   readonly missionNumber: number;
   readonly rewards: RewardData[]; // expect rewards to only be of currency 'xp'
 }
-interface ObjectiveData {
+export interface ObjectiveData {
   behaviorId: string;
   title: string;
   amount: number;
   completed: number;
   cta?: string;
 }
-interface RewardData {
+export interface RewardData {
   readonly currency: "xp" | "coin" | "vipcurrency" | "team-xp";
   readonly amount: number;
 }
@@ -36,22 +36,22 @@ interface RewardData {
 //
 //  Displays what rewards a user has unlocked and which rewards they can unlock by reaching specific levels
 //////////////////////////////////////////
-interface SeasonalRewardsProps {
+export interface SeasonalRewardsProps {
   currentLevel: number;
   rewards: SeasonalReward[];
 }
-interface SeasonalReward {
+export interface SeasonalReward {
   requiredLevel: number;
   iconUrl: string;
 }
 //////////////////////////////////////////
 // Avatar common types
 //////////////////////////////////////////
-type AvatarData = Record<AvatarSlot, AvatarItem | undefined>;
+export type AvatarData = Record<AvatarSlot, AvatarItem | undefined>;
 
 // The various slots for avatar pieces.
 // Hat and hair is mutually exclusive. When selecting a hat, the hair should be unselected and vice versa
-type AvatarSlot =
+export type AvatarSlot =
   | "body"
   | "hair"
   | "eyes"
@@ -62,13 +62,13 @@ type AvatarSlot =
   | "shirt"
   | "special";
 
-interface AvatarItem {
+export interface AvatarItem {
   id: string;
   requiredLevel: number;
   iconUrl: string;
   components: AvatarComponent[];
 }
-interface AvatarComponent {
+export interface AvatarComponent {
   url: string;
   layer: number;
 }
@@ -79,7 +79,7 @@ interface AvatarComponent {
 // The various pieces should be rendered in different layers, specified below
 // Should be usable as a separate component to just render the avatar, and be used in the avatar builder
 //////////////////////////////////////////
-interface AvatarRendererProps {
+export interface AvatarRendererProps {
   avatar: AvatarData;
 }
 //////////////////////////////////////////
@@ -87,7 +87,7 @@ interface AvatarRendererProps {
 //
 // Should allow the user to add or replace pieces of their avatar
 //////////////////////////////////////////
-interface AvatarBuilderProps {
+export interface AvatarBuilderProps {
   current: AvatarData;
   currentLevel: number;
   availableItems: Record<AvatarSlot, AvatarItem[]>;
