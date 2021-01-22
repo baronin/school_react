@@ -4,6 +4,7 @@
   max-width: 542px;
   width: 100%;
   margin: 0 auto;
+  font-size: 12px;
   background-color: #fff;
 }
 
@@ -19,7 +20,10 @@
   background-color: $color-green;
 
   &-title {
-    font-size: 12px;
     font-weight: bold;
   }
+}
+
+.weeks-challenge__content {
+  border: 1px solid #A4A4A4;
 }
