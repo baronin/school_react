@@ -1,11 +1,11 @@
 import React from "react";
-import WeeksChallenge from "./components/WeeksChallenge";
+import WeeksChallenge from "./components/weeks-challenge";
 import Header from "./components/header";
 
 const App = () => {
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <main>
         <div className="container">
           <WeeksChallenge />
