@@ -1,7 +1,7 @@
-import React from "react";
+import React, {ReactElement} from "react";
 import "./WeeksChallengeSeason.scss";
 
-const WeeksChallengeSeason = () => {
+const WeeksChallengeSeason = ():ReactElement => {
   return (
     <div className="seasonal-rewards">
       <h3 className="seasonal-rewards__title">Seasonal Rewards:</h3>
@@ -12,7 +12,7 @@ const WeeksChallengeSeason = () => {
           </div>
           <img src="" alt="" />
           <p>Avatar item</p>
-          <p>level 1</p>
+          <p>level 12</p>
         </li>
         <li className="seasonal-rewards__item">
           <div className="icon">

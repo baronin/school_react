@@ -1,11 +1,11 @@
-import React from "react";
+import React, {ReactElement} from "react";
 import firstStepIcon from "../../../assets/images/general-icons/test.png";
 import secondStepIcon from "../../../assets/images/general-icons/studying.png";
 import doneStepIcon from "../../../assets/images/general-icons/gold-medal.png";
 
 import "./WeeksChallengeProgress.scss";
 
-const WeeksChallengeProgress = () => {
+const WeeksChallengeProgress = ():ReactElement => {
   const icons = [firstStepIcon, secondStepIcon, doneStepIcon];
   const liItem = icons.map((item, i) => {
     const taskComplete = i ? (

@@ -1,8 +1,8 @@
-import React from "react";
+import React, {ReactElement} from "react";
 import WeeksChallenge from "./components/weeks-challenge";
 import Header from "./components/header";
 
-const App = () => {
+const App = ():ReactElement => {
   return (
     <div className="App">
       <Header />

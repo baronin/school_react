@@ -1,7 +1,7 @@
-import React from "react";
+import React, {ReactElement} from "react";
 import "./WeeksChallengeTask.scss";
 
-const WeeksChallengeTasks = () => {
+const WeeksChallengeTasks = ():ReactElement => {
   return (
     <ol className="weeks-challenge__check-list">
       <li className="weeks-challenge__check-item">

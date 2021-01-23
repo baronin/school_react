@@ -1,7 +1,7 @@
-import React from "react";
+import React, {ReactElement} from "react";
 import "./TimeLeft.scss";
 import timerIcon from "../../assets/images/general-icons/timer.png";
-const TimeLeft = () => {
+const TimeLeft = ():ReactElement => {
   return (
     <div className="time-left">
       <img

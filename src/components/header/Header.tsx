@@ -1,6 +1,6 @@
-import React from "react";
+import React, {ReactElement} from "react";
 import "./Header.scss";
-const Header = () => {
+const Header = ():ReactElement => {
   return (
     <header className="header">
       <h1>beetroot</h1>
