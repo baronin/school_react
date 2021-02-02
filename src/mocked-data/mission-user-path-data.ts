@@ -18,19 +18,19 @@ const missionUserPathData: MissionUserPathData = {
 			objectives: [
 				{
 					behaviorId: 'uuid1',
-					title: 'Objective 1',
+					title: 'objectives previousMissions 1',
 					amount: 1,
 					completed: 1,
 				},
 				{
 					behaviorId: 'uuid2',
-					title: 'Objective 2',
+					title: 'objectives previousMissions 2',
 					amount: 1,
 					completed: 1,
 				},
 				{
 					behaviorId: 'uuid3',
-					title: 'Objective 3',
+					title: 'objectives previousMissions 3',
 					amount: 1,
 					completed: 1,
 				},
@@ -49,19 +49,19 @@ const missionUserPathData: MissionUserPathData = {
 		objectives: [
 			{
 				behaviorId: 'uuid1',
-				title: 'Objective 1',
+				title: 'objectives currentMission 1',
 				amount: 1,
 				completed: 1,
 			},
 			{
 				behaviorId: 'uuid2',
-				title: 'Objective 2',
+				title: 'objectives currentMission 2',
 				amount: 1,
 				completed: 0,
 			},
 			{
 				behaviorId: 'uuid3',
-				title: 'Objective 3',
+				title: 'objectives currentMission 3',
 				amount: 1,
 				completed: 0,
 			},
