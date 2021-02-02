@@ -9,7 +9,15 @@ const App = (): ReactElement => {
 			<Header />
 			<main>
 				<div className="container">
-					<WeeksChallenge {...data} />
+					<WeeksChallenge
+						pathId={data.pathId}
+						pathName={data.pathName}
+						finalMissionNumber={data.finalMissionNumber}
+						upcomingPathResetDate={data.upcomingPathResetDate}
+						previousMissions={data.previousMissions}
+						currentMission={data.currentMission}
+						upcomingMissions={data.upcomingMissions}
+					/>
 				</div>
 			</main>
 		</div>
