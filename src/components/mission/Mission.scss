@@ -3,7 +3,9 @@
 .mission-list {
 	display: flex;
 	justify-content: center;
+	align-items: baseline;
 	flex-wrap: wrap;
+	min-height: 125px;
 	padding: 14px;
 	list-style: none;
 }
@@ -40,7 +42,7 @@
 			height: 2px;
 			background-color: $color-grey;
 		}
-		.mission-task-complete {
+		.mission-task-check {
 			left: 70px
 		}
 	}
@@ -56,18 +58,19 @@
 	.mission-image-task {
 		border-color: $color-green;
 	}
-	.mission-task-complete {
-		border-color: $color-green;
-	}
 }
 
 .mission-images-wrap {
 	position: relative;
 	width: 32px;
 	height: 32px;
+	padding: 0;
+	margin: 0;
 	background-color: #fff;
 	border-radius: 50px;
 	z-index: 1;
+	border: none;
+	cursor: pointer;
 }
 
 .mission-images-wrap-active::before {
@@ -87,22 +90,29 @@
 	z-index: 1;
 }
 
-.mission-task-complete, {
+.mission-task-check, {
 	position: absolute;
 	top: 25%;
 	left: 102px;
 	width: 18px;
 	height: 18px;
-	background-color: $color-white;
-	border: 2px solid $color-grey;
 	border-radius: 50%;
 	z-index: 1;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
 }
 
 .mission-currency {
 	position: absolute;
-	top: 18px;
+	top: 20px;
 	left: -50%;
-	transform: translateX(-20%);
-	font-size: 10px;
+	transform: translateX(-35%);
+	width: 100px;
+	text-align: center;
+	font-size: 8px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }

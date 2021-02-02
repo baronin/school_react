@@ -1,28 +1,47 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import './WeeksChallenge.scss';
-import WeeksChallengeProgress from './weeks-challenge-progress';
-import WeeksChallengeTasks from './weeks-challenge-task';
 import WeeksChallengeSeason from './weeks-challenge-season';
 import { MissionUserPathData } from '../../types/types';
 import RemainingTime from '../remaining-time';
+import Mission from '../mission';
 
-const WeeksChallenge: FC<MissionUserPathData> = ({ previousMissions, upcomingPathResetDate }) => {
-	const data = previousMissions;
+const WeeksChallenge: FC<MissionUserPathData> = ({
+	pathId,
+	pathName,
+	finalMissionNumber,
+	previousMissions,
+	currentMission,
+	upcomingMissions,
+	upcomingPathResetDate,
+}) => {
+	const progressMission = [...previousMissions, currentMission, ...upcomingMissions];
 
+	const [selectedMissionInx] = useState<number>(progressMission.indexOf(currentMission));
 	const today = new Date().toDateString();
 	const todayParseMs = Date.parse(today);
 	const parseResetDate = Date.parse(upcomingPathResetDate?.toDateString() as string);
-	const getDays = (parseResetDate - todayParseMs) / (60 * 60 * 24 * 1000);
+	const getRemainingDays = (parseResetDate - todayParseMs) / (60 * 60 * 24 * 1000);
 
+	function test(): number {
+		return selectedMissionInx;
+	}
+
+	console.log('selectedMissionInx', test());
 	return (
 		<section className="weeks-challenge">
-			<h1>{data && <RemainingTime date={getDays} />}</h1>
 			<header className="weeks-challenge__header">
-				<h3 className="weeks-challenge__header-title">Veckans uppdrag</h3>
+				<RemainingTime date={getRemainingDays} />
+				<h3 id={pathId} className="weeks-challenge__header-title">
+					Veckans uppdrag <b>pathName {pathName}</b>
+					<p>{finalMissionNumber}</p>
+				</h3>
 			</header>
 			<div className="weeks-challenge__content">
-				<WeeksChallengeProgress />
-				<WeeksChallengeTasks />
+				<ul className="mission-list">
+					{progressMission.map((item, inx) => {
+						return <Mission key={`mission-${inx}`} {...item} />;
+					})}
+				</ul>
 				<WeeksChallengeSeason />
 			</div>
 		</section>

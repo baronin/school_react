@@ -1,9 +1,12 @@
-.weeks-challenge__check-list {
+.tasks-list {
+	position: absolute;
+	top: 60px;
   display: flex;
+	flex-direction: row;
   padding: 10px 32px 18px;
 }
 
-.weeks-challenge__check-item {
+.tasks-item {
   max-width: 33%;
   width: calc(100% - 40px);
   margin-right: 40px;
