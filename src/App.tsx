@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import WeeksChallenge from './components/weeks-challenge';
+import MissionUserPath from './components/mission-user-path';
 import Header from './components/header';
 import data from './mocked-data/mission-user-path-data';
 
@@ -9,7 +9,7 @@ const App = (): ReactElement => {
 			<Header />
 			<main>
 				<div className="container">
-					<WeeksChallenge
+					<MissionUserPath
 						pathId={data.pathId}
 						pathName={data.pathName}
 						finalMissionNumber={data.finalMissionNumber}
