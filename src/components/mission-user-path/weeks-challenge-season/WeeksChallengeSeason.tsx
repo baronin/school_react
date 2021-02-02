@@ -8,7 +8,7 @@ const WeeksChallengeSeason = (): ReactElement => {
 			<ul className="seasonal-rewards__list">
 				<li className="seasonal-rewards__item">
 					<div className="icon">
-						<img src="#" alt="complate" />
+						<img src="#" alt="complete" />
 					</div>
 					<img src="" alt="" />
 					<p>Avatar item</p>
@@ -16,7 +16,7 @@ const WeeksChallengeSeason = (): ReactElement => {
 				</li>
 				<li className="seasonal-rewards__item">
 					<div className="icon">
-						<img src="#" alt="complate" />
+						<img src="#" alt="complete" />
 					</div>
 					<img src="" alt="" />
 					<p>Avatar item</p>
