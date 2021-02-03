@@ -9,15 +9,25 @@ type Props = {
 	title: string;
 	amount: number;
 	completed: number;
+	selected: boolean;
+	onClick: () => void;
 };
 
-const Objective: FC<Props> = ({ behaviorId, title, amount, completed, count }): ReactElement => {
+const Objective: FC<Props> = ({
+	selected = false,
+	onClick,
+	behaviorId,
+	title,
+	amount,
+	completed,
+	count,
+}): ReactElement => {
 	const imgCompleted = completed ? checkCompleted : checkDefault;
 	console.log('amount', amount);
 
 	return (
 		<li className="tasks-item" id={behaviorId}>
-			<p className="tasks-desc">
+			<p onClick={onClick} className="tasks-desc">
 				{count + 1}. {title}
 			</p>
 			<img className="tasks-icon" src={imgCompleted} alt="done" width="16" height="16" />
