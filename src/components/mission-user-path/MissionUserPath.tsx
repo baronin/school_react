@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import './MissionUserPath.scss';
-import '../mission/Mission.scss';
+// import '../mission/Mission.scss';
 
 import WeeksChallengeSeason from './weeks-challenge-season';
 import { MissionUserPathData } from '../../types/types';
@@ -19,7 +19,8 @@ const MissionUserPath: FC<MissionUserPathData> = ({
 	upcomingPathResetDate,
 }) => {
 	const progressMissionArr = [...previousMissions, currentMission, ...upcomingMissions];
-	const [stateObjectiveData, setStateObjectiveData] = useState(previousMissions[0].objectives);
+	const getCurrentMissionItem = progressMissionArr.indexOf(currentMission);
+	const [stateObjectiveData, setStateObjectiveData] = useState(progressMissionArr[getCurrentMissionItem].objectives);
 	const today = new Date().toDateString();
 	const todayParseMs = Date.parse(today);
 	const parseResetDate = Date.parse(upcomingPathResetDate?.toDateString() as string);
@@ -35,7 +36,7 @@ const MissionUserPath: FC<MissionUserPathData> = ({
 				</h3>
 			</header>
 			<div className="weeks-challenge__content">
-				<ul className="mission-list">
+				<ul className="reward-list">
 					{progressMissionArr.map((item, inx) => {
 						return (
 							<Reward
@@ -52,6 +53,7 @@ const MissionUserPath: FC<MissionUserPathData> = ({
 					{stateObjectiveData.map((item, index) => (
 						<Objective
 							key={`objective-${index}`}
+							count={index}
 							behaviorId={item.behaviorId}
 							title={item.title}
 							amount={item.amount}
