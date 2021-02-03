@@ -1,0 +1,11 @@
+.tasks-list {
+  display: flex;
+	flex-direction: row;
+  padding: 10px 32px 18px;
+}
+
+.tasks-item {
+  max-width: 33%;
+  width: calc(100% - 40px);
+  margin-right: 40px;
+}
