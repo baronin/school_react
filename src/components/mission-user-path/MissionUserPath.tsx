@@ -27,8 +27,8 @@ const MissionUserPath: FC<MissionUserPathData & Props> = ({
 	// const getCurrentMissionItem = progressMissionArr.indexOf(currentMission);
 
 	const [stateObjectiveData, setStateObjectiveData] = useState(currentMission.objectives);
-	const isDisabled = Boolean(upcomingMissions?.[0].objectives.filter((item) => item.completed).length);
-	console.log(isDisabled);
+	// const isDisabled = Boolean(upcomingMissions?.[0].objectives.filter((item) => item.completed).length);
+	// console.log(isDisabled);
 	const getCurrentTask = stateObjectiveData.find((objective) => !objective.completed);
 	// const [isDisable, setIsDisable] = useState(true)
 	// console.log('getCurrentTask', getCurrentTask);
@@ -51,6 +51,7 @@ const MissionUserPath: FC<MissionUserPathData & Props> = ({
 	);
 
 	const allObjectivesCompleted = allObjectiVes.every((value) => value.completed);
+	console.log('allObjectivesCompleted', allObjectivesCompleted);
 
 	return (
 		<section className="weeks-challenge">

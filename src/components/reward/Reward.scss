@@ -16,7 +16,7 @@
 		position: absolute;
 		top: 50%;
 		left: 32px;
-		width: calc(100% - 30px);
+		width: calc(100% - 31px);
 		height: 2px;
 		background-color: $color-grey;
 		z-index: 0;
@@ -28,18 +28,9 @@
 	&:last-child {
 		// padding-right: 54px;
 		&:before {
-			left: 0;
-			width: calc(100% - 74px);
+			left: 32px;
+			width: calc(100% - 106px);
 		}
-		//&:after {
-		//	content: '';
-		//	position: absolute;
-		//	top: 50%;
-		//	right: 5px;
-		//	width: 50px;
-		//	height: 2px;
-		//	background-color: $color-grey;
-		//}
 		.reward-task-check {
 			left: 70px
 		}
@@ -69,6 +60,10 @@
 	z-index: 1;
 	border: none;
 	cursor: pointer;
+	&:disabled {
+		opacity: 0.3;
+		cursor: auto;
+	}
 
 	img {
 		width: 100%;
