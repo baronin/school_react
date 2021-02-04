@@ -1,20 +1,38 @@
 import { FC, ReactElement } from 'react';
 import './Objective.scss';
+import checkCompleted from '../../../assets/images/general-icons/check_complete.png';
+import checkDefault from '../../../assets/images/general-icons/default.svg';
 
 type Props = {
+	count: number;
 	behaviorId: string;
 	title: string;
 	amount: number;
 	completed: number;
+	selected: boolean;
+	onClick: () => void;
 };
 
-const Objective: FC<Props> = ({ behaviorId, title, amount, completed }): ReactElement => {
-	console.log(completed);
+const Objective: FC<Props> = ({
+	selected = false,
+	onClick,
+	behaviorId,
+	title,
+	amount,
+	completed,
+	count,
+}): ReactElement => {
+	const imgCompleted = completed ? checkCompleted : checkDefault;
+	const currentTask = selected ? 'tasks-item task—current' : 'tasks-item';
+	console.log(currentTask);
+	console.log('amount', amount);
+
 	return (
-		<li className="tasks-item" id={behaviorId}>
-			<p className="tasks-desc">{title}</p>
-			<p className="tasks-amount">{amount}</p>
-			<img className="tasks-icon" src="#" alt="done" />
+		<li className={currentTask} id={behaviorId}>
+			<p onClick={onClick} className="tasks-desc">
+				{count + 1}. {title}
+			</p>
+			<img className="tasks-icon" src={imgCompleted} alt="icons" width="16" height="16" />
 		</li>
 	);
 };

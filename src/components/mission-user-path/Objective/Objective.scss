@@ -1,11 +1,22 @@
 .tasks-list {
   display: flex;
 	flex-direction: row;
-  padding: 10px 32px 18px;
+	min-height: 46px;
+  padding: 10px 32px 5px 32px;
+	list-style-type: decimal;
 }
 
 .tasks-item {
+	display: flex;
   max-width: 33%;
-  width: calc(100% - 40px);
-  margin-right: 40px;
+  width: 100%;
+	padding-right: 20px;
+}
+
+.tasks-desc {
+	margin-right: 20px;
+}
+.task—current {
+	text-decoration: underline;
+	text-decoration-color: #3DBCA1;
 }
