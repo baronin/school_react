@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { MissionData, RewardData } from '../../types/types';
 import './Mission.scss';
 import checkDefault from '../../assets/images/general-icons/check_grey.png';
@@ -6,11 +6,11 @@ import checkCompleted from '../../assets/images/general-icons/check_complete.png
 import iconGoldMedal from '../../assets/images/general-icons/gold-medal.png';
 import iconStudying from '../../assets/images/general-icons/studying.png';
 import iconTest from '../../assets/images/general-icons/test.png';
-import Tasks from '../weeks-challenge/tasks';
+// import Tasks from '../weeks-challenge/tasks'; s
 
 const Mission = (mission: MissionData) => {
 	const [visible, setVisible] = useState(false);
-	const { completed, missionNumber, rewards, objectives } = mission;
+	const { completed, missionNumber, rewards } = mission;
 	const missionItemClass = completed ? 'mission-item mission-item--active' : 'mission-item';
 	const missionImageClass = completed ? 'mission-images-wrap mission-images-wrap-active' : 'mission-images-wrap';
 	const checkIcon = completed ? checkCompleted : checkDefault;
@@ -39,7 +39,7 @@ const Mission = (mission: MissionData) => {
 	const rewardsCurrent = rewards.map((reward: RewardData, i) => {
 		return (
 			<div key={`mission-task-check${i}`} className="mission-task-check">
-				<img src={checkIcon} alt="" />
+				<img src={checkIcon} alt="dsd" />
 				<p className="mission-currency">
 					{reward.amount} {reward.currency.toUpperCase()}
 				</p>
@@ -52,7 +52,6 @@ const Mission = (mission: MissionData) => {
 			<button className={missionImageClass} onClick={toggleShowTasks} type="button">
 				<img className="mission-image" src={missionIconsTask} alt="images" />
 			</button>
-			<Tasks visible={visible} objectives={objectives} />
 		</li>
 	);
 };

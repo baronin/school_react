@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import './MissionUserPath.scss';
-// import '../mission/Mission.scss';
+import '../mission/Mission.scss';
 
 import WeeksChallengeSeason from './weeks-challenge-season';
 import { MissionUserPathData, ObjectiveData } from '../../types/types';
@@ -27,15 +27,18 @@ const MissionUserPath: FC<MissionUserPathData & Props> = ({
 	// const getCurrentMissionItem = progressMissionArr.indexOf(currentMission);
 
 	const [stateObjectiveData, setStateObjectiveData] = useState(currentMission.objectives);
+	const isDisabled = Boolean(upcomingMissions?.[0].objectives.filter((item) => item.completed).length);
+	console.log(isDisabled);
 	const getCurrentTask = stateObjectiveData.find((objective) => !objective.completed);
-	console.log('getCurrentTask', getCurrentTask);
+	// const [isDisable, setIsDisable] = useState(true)
+	// console.log('getCurrentTask', getCurrentTask);
+	// console.log('isDisable', isDisable);
 	// work with data
 	const today = new Date().toDateString();
 	const todayParseMs = Date.parse(today);
 	const parseResetDate = Date.parse(upcomingPathResetDate?.toDateString() as string);
 	const getRemainingDays = (parseResetDate - todayParseMs) / (60 * 60 * 24 * 1000);
 	// const [selectedObjectiveIdx] = useState<number>();
-
 	return (
 		<section className="weeks-challenge">
 			<header className="weeks-challenge__header">
@@ -56,6 +59,7 @@ const MissionUserPath: FC<MissionUserPathData & Props> = ({
 								missionNumber={item.missionNumber}
 								onClick={() => setStateObjectiveData(item.objectives)}
 								isCurrent={item === currentMission}
+								isDisabled={upcomingMissions.includes(item)}
 							/>
 						);
 					})}
@@ -65,8 +69,6 @@ const MissionUserPath: FC<MissionUserPathData & Props> = ({
 						<Objective
 							onClick={() => {
 								onObjectivePress?.(item, index);
-								console.log('click', getCurrentTask?.completed);
-								console.log('getCurrentTask', item?.completed);
 							}}
 							selected={getCurrentTask?.behaviorId === item.behaviorId}
 							key={`objective-${index}`}
@@ -86,3 +88,8 @@ const MissionUserPath: FC<MissionUserPathData & Props> = ({
 };
 
 export default MissionUserPath;
+
+/*
+								// console.log('click', getCurrentTask?.completed);
+								// celnoos.log('getCurrentTask', item?.completed);
+ */

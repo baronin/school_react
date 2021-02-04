@@ -15,15 +15,14 @@ type Props = {
 	missionNumber: number;
 	onClick: () => void;
 	isCurrent: boolean;
+	isDisabled: boolean;
 };
 
-const Reward: FC<Props> = ({ rewards, completed, missionNumber, onClick, isCurrent }) => {
-	// console.log('rewards', rewards);
-	// console.log('completed', completed);
-	// console.log('missionNumber', missionNumber);
-	console.log('isCurrent', isCurrent);
+const Reward: FC<Props> = ({ isDisabled, rewards, completed, missionNumber, onClick, isCurrent }) => {
 	const missionImageClass = isCurrent ? 'reward-button reward-button-active' : 'reward-button';
+	console.log(isDisabled);
 
+	console.log('completed', completed);
 	const checkIcon = completed ? checkCompleted : checkDefault;
 
 	// choose icon for mission
