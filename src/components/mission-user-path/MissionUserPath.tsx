@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useMemo, useState } from 'react';
 import './MissionUserPath.scss';
 import '../mission/Mission.scss';
 
@@ -39,6 +39,19 @@ const MissionUserPath: FC<MissionUserPathData & Props> = ({
 	const parseResetDate = Date.parse(upcomingPathResetDate?.toDateString() as string);
 	const getRemainingDays = (parseResetDate - todayParseMs) / (60 * 60 * 24 * 1000);
 	// const [selectedObjectiveIdx] = useState<number>();
+
+	const allObjectiVes = useMemo(
+		() =>
+			[
+				...previousMissions.map((value) => value.objectives),
+				...upcomingMissions.map((value) => value.objectives),
+				...currentMission.objectives,
+			].flat(),
+		[currentMission.objectives, previousMissions, upcomingMissions],
+	);
+
+	const allObjectivesCompleted = allObjectiVes.every((value) => value.completed);
+
 	return (
 		<section className="weeks-challenge">
 			<header className="weeks-challenge__header">
@@ -50,19 +63,17 @@ const MissionUserPath: FC<MissionUserPathData & Props> = ({
 			</header>
 			<div className="weeks-challenge__content">
 				<ul className="reward-list">
-					{progressMissionArr.map((item, inx) => {
-						return (
-							<Reward
-								key={inx}
-								rewards={item.rewards}
-								completed={item.completed}
-								missionNumber={item.missionNumber}
-								onClick={() => setStateObjectiveData(item.objectives)}
-								isCurrent={item === currentMission}
-								isDisabled={upcomingMissions.includes(item)}
-							/>
-						);
-					})}
+					{progressMissionArr.map((item, inx) => (
+						<Reward
+							key={inx}
+							rewards={item.rewards}
+							completed={item.completed}
+							missionNumber={item.missionNumber}
+							onClick={() => setStateObjectiveData(item.objectives)}
+							isCurrent={item === currentMission}
+							isDisabled={!allObjectivesCompleted && inx === progressMissionArr.length - 1}
+						/>
+					))}
 				</ul>
 				<ol className="tasks-list">
 					{stateObjectiveData.map((item, index) => (
