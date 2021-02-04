@@ -1,7 +1,7 @@
 import { FC, ReactElement } from 'react';
 import './Objective.scss';
 import checkCompleted from '../../../assets/images/general-icons/check_complete.png';
-import checkDefault from '../../../assets/images/general-icons/check_grey.png';
+import checkDefault from '../../../assets/images/general-icons/default.svg';
 
 type Props = {
 	count: number;
@@ -23,14 +23,16 @@ const Objective: FC<Props> = ({
 	count,
 }): ReactElement => {
 	const imgCompleted = completed ? checkCompleted : checkDefault;
+	const currentTask = selected ? 'tasks-item task—current' : 'tasks-item';
+	console.log(currentTask);
 	console.log('amount', amount);
 
 	return (
-		<li className="tasks-item" id={behaviorId}>
+		<li className={currentTask} id={behaviorId}>
 			<p onClick={onClick} className="tasks-desc">
 				{count + 1}. {title}
 			</p>
-			<img className="tasks-icon" src={imgCompleted} alt="done" width="16" height="16" />
+			<img className="tasks-icon" src={imgCompleted} alt="icons" width="16" height="16" />
 		</li>
 	);
 };

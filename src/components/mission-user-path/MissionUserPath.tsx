@@ -7,7 +7,7 @@ import { MissionUserPathData, ObjectiveData } from '../../types/types';
 import RemainingTime from '../remaining-time';
 import Reward from '../reward';
 import Objective from './Objective';
-import './Objective/Objective.scss';
+// import './Objective/Objective.scss';
 
 type Props = {
 	onObjectivePress?: (objective: ObjectiveData, index: number) => void;
@@ -24,13 +24,17 @@ const MissionUserPath: FC<MissionUserPathData & Props> = ({
 	onObjectivePress,
 }) => {
 	const progressMissionArr = [...previousMissions, currentMission, ...upcomingMissions];
-	const getCurrentMissionItem = progressMissionArr.indexOf(currentMission);
-	const [stateObjectiveData, setStateObjectiveData] = useState(progressMissionArr[getCurrentMissionItem].objectives);
+	// const getCurrentMissionItem = progressMissionArr.indexOf(currentMission);
+
+	const [stateObjectiveData, setStateObjectiveData] = useState(currentMission.objectives);
+	const getCurrentTask = stateObjectiveData.find((objective) => !objective.completed);
+	console.log('getCurrentTask', getCurrentTask);
+	// work with data
 	const today = new Date().toDateString();
 	const todayParseMs = Date.parse(today);
 	const parseResetDate = Date.parse(upcomingPathResetDate?.toDateString() as string);
 	const getRemainingDays = (parseResetDate - todayParseMs) / (60 * 60 * 24 * 1000);
-	const [selectedObjectiveIdx] = useState<number>();
+	// const [selectedObjectiveIdx] = useState<number>();
 
 	return (
 		<section className="weeks-challenge">
@@ -51,6 +55,7 @@ const MissionUserPath: FC<MissionUserPathData & Props> = ({
 								completed={item.completed}
 								missionNumber={item.missionNumber}
 								onClick={() => setStateObjectiveData(item.objectives)}
+								isCurrent={item === currentMission}
 							/>
 						);
 					})}
@@ -60,9 +65,10 @@ const MissionUserPath: FC<MissionUserPathData & Props> = ({
 						<Objective
 							onClick={() => {
 								onObjectivePress?.(item, index);
-								// setSelectedObjectiveIdx()
+								console.log('click', getCurrentTask?.completed);
+								console.log('getCurrentTask', item?.completed);
 							}}
-							selected={selectedObjectiveIdx !== undefined ? index === selectedObjectiveIdx : Boolean(item.completed)}
+							selected={getCurrentTask?.behaviorId === item.behaviorId}
 							key={`objective-${index}`}
 							count={index}
 							behaviorId={item.behaviorId}
