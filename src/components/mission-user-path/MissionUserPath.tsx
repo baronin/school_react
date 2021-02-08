@@ -1,12 +1,15 @@
 import React, { FC, useState } from 'react';
-import './MissionUserPath.scss';
-import '../mission/Mission.scss';
 
-import WeeksChallengeSeason from './weeks-challenge-season';
+// scss
+import './MissionUserPath.scss';
+
+// components
+import RemainingTime from './remaining-time';
+import Reward from './reward';
+import Objective from './objective';
+
+// types
 import { MissionUserPathData, ObjectiveData } from '../../types/types';
-import RemainingTime from '../remaining-time';
-import Reward from '../reward';
-import Objective from './Objective';
 
 type Props = {
 	onObjectivePress?: (objective: ObjectiveData, index: number) => void;
@@ -35,7 +38,7 @@ const MissionUserPath: FC<MissionUserPathData & Props> = ({
 	const getRemainingDays = (parseResetDate - todayParseMs) / (60 * 60 * 24 * 1000);
 
 	return (
-		<section className="weeks-challenge">
+		<>
 			<header className="weeks-challenge__header">
 				<RemainingTime date={getRemainingDays} />
 				<h3 id={pathId} className="weeks-challenge__header-title">
@@ -73,10 +76,8 @@ const MissionUserPath: FC<MissionUserPathData & Props> = ({
 						/>
 					))}
 				</ol>
-
-				<WeeksChallengeSeason />
 			</div>
-		</section>
+		</>
 	);
 };
 

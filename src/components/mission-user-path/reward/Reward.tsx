@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { RewardData } from '../../types/types';
-import iconTest from '../../assets/images/general-icons/test.png';
-import iconStudying from '../../assets/images/general-icons/studying.png';
-import iconGoldMedal from '../../assets/images/general-icons/gold-medal.png';
-import checkCompleted from '../../assets/images/general-icons/check_complete.png';
-import checkDefault from '../../assets/images/general-icons/check_grey.png';
+import { RewardData } from '../../../types/types';
+import iconTest from '../../../assets/images/general-icons/test.png';
+import iconStudying from '../../../assets/images/general-icons/studying.png';
+import iconGoldMedal from '../../../assets/images/general-icons/gold-medal.png';
+import checkCompleted from '../../../assets/images/general-icons/check_complete.png';
+import checkDefault from '../../../assets/images/general-icons/check_grey.png';
 
 // scss
 import './Reward.scss';

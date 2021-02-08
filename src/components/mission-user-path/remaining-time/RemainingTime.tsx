@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import './RemainingTime.scss';
-import timerIcon from '../../assets/images/general-icons/timer.png';
+import timerIcon from '../../../assets/images/general-icons/timer.png';
 
 interface Props {
 	date: number | string | undefined;
