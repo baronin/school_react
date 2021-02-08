@@ -80,19 +80,19 @@ const missionUserPathData: MissionUserPathData = {
 			objectives: [
 				{
 					behaviorId: 'uuid1',
-					title: 'Objective 1',
+					title: 'objective 1',
 					amount: 1,
 					completed: 0,
 				},
 				{
 					behaviorId: 'uuid2',
-					title: 'Objective 2',
+					title: 'objective 2',
 					amount: 1,
 					completed: 0,
 				},
 				{
 					behaviorId: 'uuid3',
-					title: 'Objective 3',
+					title: 'objective 3',
 					amount: 1,
 					completed: 0,
 				},
