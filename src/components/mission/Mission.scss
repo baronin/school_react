@@ -1,118 +1,30 @@
-@import "./src/assets/scss/vars";
+@import "../../assets/scss/vars";
 
-.mission-list {
-	display: flex;
-	justify-content: center;
-	align-items: baseline;
-	flex-wrap: wrap;
-	min-height: 125px;
-	padding: 14px;
-	list-style: none;
+.weeks-challenge {
+  max-width: 542px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 12px;
+  background-color: #fff;
 }
 
-.mission-item {
-	position: relative;
-	padding-right: 150px;
-	&:before {
-		content: '';
-		position: absolute;
-		top: 50%;
-		left: 32px;
-		width: calc(100% - 30px);
-		height: 2px;
-		background-color: $color-grey;
-		z-index: 0;
-	}
+.weeks-challenge__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 5px 8px;
+  text-align: center;
+  color: $color-white;
+  background-color: $color-green;
 
-	&:first-child {
-		padding-left: 0;
-	}
-	&:last-child {
-		padding-right: 54px;
-		&:before {
-			left: 0;
-			width: calc(100% - 90px);
-		}
-		&:after {
-			content: '';
-			position: absolute;
-			top: 50%;
-			right: 5px;
-			width: 50px;
-			height: 2px;
-			background-color: $color-grey;
-		}
-		.mission-task-check {
-			left: 70px
-		}
-	}
+  &-title {
+    font-weight: bold;
+  }
 }
 
-.mission-item--active {
-	&:before {
-		background-color: $color-green;
-	}
-	.mission-images-wrap {
-		border-color: $color-green;
-	}
-	.mission-image-task {
-		border-color: $color-green;
-	}
-}
-
-.mission-images-wrap {
-	position: relative;
-	width: 32px;
-	height: 32px;
-	padding: 0;
-	margin: 0;
-	background-color: #fff;
-	border-radius: 50px;
-	z-index: 1;
-	border: none;
-	cursor: pointer;
-}
-
-.mission-images-wrap-active::before {
-	content: "";
-	top: -2px;
-	left: -2px;
-	position: absolute;
-	width: calc(100% + 4px);
-	height: calc(100% + 4px);
-	background-color: #3DBCA1;
-	border-radius: 50%;
-	z-index: -1;
-}
-
-.mission-image {
-	width: 100%;
-	z-index: 1;
-}
-
-.mission-task-check, {
-	position: absolute;
-	top: 25%;
-	left: 102px;
-	width: 18px;
-	height: 18px;
-	border-radius: 50%;
-	z-index: 1;
-
-	img {
-		width: 100%;
-		height: auto;
-	}
-}
-
-.mission-currency {
-	position: absolute;
-	top: 20px;
-	left: -50%;
-	transform: translateX(-35%);
-	width: 100px;
-	text-align: center;
-	font-size: 8px;
-	overflow: hidden;
-	text-overflow: ellipsis;
+.weeks-challenge__content {
+	border: 1px solid #A4A4A4;
+	border-bottom: none;
 }
