@@ -16,8 +16,6 @@ type Props = {
 const Objective: FC<Props> = ({ selected = false, onClick, behaviorId, title, completed, count }): ReactElement => {
 	const imgCompleted = completed ? checkCompleted : checkDefault;
 	const currentTask = selected ? 'tasks-item task—current' : 'tasks-item';
-	// console.log(currentTask);
-	// console.log('amount', amount); 	amount,
 
 	return (
 		<li className={currentTask} id={behaviorId}>

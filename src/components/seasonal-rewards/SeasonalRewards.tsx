@@ -6,12 +6,12 @@ import iconLock from '../../assets/images/general-icons/lock.svg';
 // import hair from '../../assets/images/avatar-builder-components/Hats/Hat_jazz.svg';
 
 // scss
-import './SeasonRewards.scss';
+import './SeasonalRewards.scss';
 
 // types
 import { SeasonalRewardsProps } from '../../types/types';
 
-const SeasonRewards: FC<SeasonalRewardsProps> = ({ currentLevel, rewards }) => {
+const SeasonalRewards: FC<SeasonalRewardsProps> = ({ currentLevel, rewards }) => {
 	console.log(currentLevel, rewards);
 	return (
 		<div className="seasonal-rewards">
@@ -50,4 +50,4 @@ const SeasonRewards: FC<SeasonalRewardsProps> = ({ currentLevel, rewards }) => {
 	);
 };
 
-export default SeasonRewards;
+export default SeasonalRewards;

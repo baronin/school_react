@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
-import MissionUserPath from './components/mission-user-path';
+import Mission from './components/mission';
 import Header from './components/header';
-import SeasonRewards from './components/season-rewards';
+import SeasonalRewards from './components/seasonal-rewards';
 
 // mocked data
 import missionUserPathData from './mocked-data/mission-user-path-data';
@@ -24,7 +24,7 @@ const App = (): ReactElement => {
 			<main>
 				<div className="container">
 					<section className="weeks-challenge">
-						<MissionUserPath
+						<Mission
 							pathId={pathId}
 							pathName={pathName}
 							finalMissionNumber={finalMissionNumber}
@@ -33,7 +33,7 @@ const App = (): ReactElement => {
 							currentMission={currentMission}
 							upcomingMissions={upcomingMissions}
 						/>
-						<SeasonRewards currentLevel={currentLevel} rewards={rewards} />
+						<SeasonalRewards currentLevel={currentLevel} rewards={rewards} />
 					</section>
 				</div>
 			</main>

@@ -1,58 +1,83 @@
-import { useState } from 'react';
-import { MissionData, RewardData } from '../../types/types';
+import React, { FC, useState } from 'react';
+
+// scss
 import './Mission.scss';
-import checkDefault from '../../assets/images/general-icons/check_grey.png';
-import checkCompleted from '../../assets/images/general-icons/check_complete.png';
-import iconGoldMedal from '../../assets/images/general-icons/gold-medal.png';
-import iconStudying from '../../assets/images/general-icons/studying.png';
-import iconTest from '../../assets/images/general-icons/test.png';
-// import Tasks from '../weeks-challenge/tasks'; s
 
-const Mission = (mission: MissionData) => {
-	const [visible, setVisible] = useState(false);
-	const { completed, missionNumber, rewards } = mission;
-	const missionItemClass = completed ? 'mission-item mission-item--active' : 'mission-item';
-	const missionImageClass = completed ? 'mission-images-wrap mission-images-wrap-active' : 'mission-images-wrap';
-	const checkIcon = completed ? checkCompleted : checkDefault;
+// components
+import RemainingTime from './remaining-time';
+import Reward from './reward';
+import Objective from './objective';
 
-	let missionIconsTask;
-	switch (missionNumber) {
-		case 1:
-			missionIconsTask = iconTest;
-			break;
-		case 2:
-			missionIconsTask = iconStudying;
-			break;
-		case 3:
-			missionIconsTask = iconGoldMedal;
-			break;
-		default:
-			missionIconsTask = '#';
-			break;
-	}
+// types
+import { MissionUserPathData, ObjectiveData } from '../../types/types';
 
-	const toggleShowTasks = () => {
-		console.log('toggleShowTasks', visible);
-		setVisible(!visible);
-	};
+type Props = {
+	onObjectivePress?: (objective: ObjectiveData, index: number) => void;
+};
 
-	const rewardsCurrent = rewards.map((reward: RewardData, i) => {
-		return (
-			<div key={`mission-task-check${i}`} className="mission-task-check">
-				<img src={checkIcon} alt="dsd" />
-				<p className="mission-currency">
-					{reward.amount} {reward.currency.toUpperCase()}
-				</p>
-			</div>
-		);
-	});
+const Mission: FC<MissionUserPathData & Props> = ({
+	pathId,
+	pathName,
+	finalMissionNumber,
+	previousMissions,
+	currentMission,
+	upcomingMissions,
+	upcomingPathResetDate,
+	onObjectivePress,
+}) => {
+	const progressMissionArr = [...previousMissions, currentMission, ...upcomingMissions];
+
+	const [stateObjectiveData, setStateObjectiveData] = useState(currentMission.objectives);
+
+	const getCurrentTask = stateObjectiveData.find((objective) => !objective.completed);
+
+	// work with data
+	const today = new Date().toDateString();
+	const todayParseMs = Date.parse(today);
+	const parseResetDate = Date.parse(upcomingPathResetDate?.toDateString() as string);
+	const getRemainingDays = (parseResetDate - todayParseMs) / (60 * 60 * 24 * 1000);
+
 	return (
-		<li className={missionItemClass}>
-			{rewards && rewardsCurrent}
-			<button className={missionImageClass} onClick={toggleShowTasks} type="button">
-				<img className="mission-image" src={missionIconsTask} alt="images" />
-			</button>
-		</li>
+		<>
+			<header className="weeks-challenge__header">
+				<RemainingTime date={getRemainingDays} />
+				<h3 id={pathId} className="weeks-challenge__header-title">
+					Veckans uppdrag <b>pathName {pathName}</b>
+					<p>{finalMissionNumber}</p>
+				</h3>
+			</header>
+			<div className="weeks-challenge__content">
+				<ul className="reward-list">
+					{progressMissionArr.map((item, inx, missions) => (
+						<Reward
+							key={inx}
+							rewards={item.rewards}
+							completed={item.completed}
+							missionNumber={item.missionNumber}
+							onClick={() => setStateObjectiveData(item.objectives)}
+							isCurrent={item === currentMission}
+							isActive={missions[inx - 1]?.completed ?? true}
+						/>
+					))}
+				</ul>
+				<ol className="tasks-list">
+					{stateObjectiveData.map((item, index) => (
+						<Objective
+							onClick={() => {
+								onObjectivePress?.(item, index);
+							}}
+							selected={getCurrentTask?.behaviorId === item.behaviorId}
+							key={`objective-${index}`}
+							count={index}
+							behaviorId={item.behaviorId}
+							title={item.title}
+							amount={item.amount}
+							completed={item.completed}
+						/>
+					))}
+				</ol>
+			</div>
+		</>
 	);
 };
 
