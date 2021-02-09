@@ -6,6 +6,7 @@ import SeasonalRewards from './components/seasonal-rewards';
 // mocked data
 import missionUserPathData from './mocked-data/mission-user-path-data';
 import seasonRewardsData from './mocked-data/season-rewards-data';
+import Avatar from './components/avatar';
 
 const App = (): ReactElement => {
 	const {
@@ -17,7 +18,9 @@ const App = (): ReactElement => {
 		currentMission,
 		upcomingMissions,
 	} = missionUserPathData;
+
 	const { currentLevel, rewards } = seasonRewardsData;
+
 	return (
 		<div className="app">
 			<Header />
@@ -35,6 +38,10 @@ const App = (): ReactElement => {
 						/>
 						<SeasonalRewards currentLevel={currentLevel} rewards={rewards} />
 					</section>
+					<div className="avatar-component">
+						<button type="button">Toggle</button>
+						<Avatar />
+					</div>
 				</div>
 			</main>
 		</div>
