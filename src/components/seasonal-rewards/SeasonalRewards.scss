@@ -60,6 +60,12 @@
 	}
 }
 
+.seasonal-rewards__item--disabled {
+	.seasonal-rewards__item-icon, p {
+		opacity: 0.25;
+	}
+}
+
 .seasonal-rewards__item-icon {
 	display: flex;
 	justify-content: center;
@@ -78,4 +84,9 @@
 	position: absolute;
 	top: 3px;
 	right: 3px;
+
+	img {
+		width: 18px;
+		height: 18px;
+	}
 }

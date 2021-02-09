@@ -1,6 +1,7 @@
 .time-left {
   position: absolute;
-  top: 5px;
+	top: 50%;
+	transform: translateY(-50%);
   left: 8px;
   display: flex;
   align-items: center;
