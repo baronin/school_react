@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState, useRef } from 'react';
 
 // icons
 import iconAvailable from '../../assets/images/general-icons/completed.svg';
@@ -12,17 +12,56 @@ import './SeasonalRewards.scss';
 import { SeasonalRewardsProps } from '../../types/types';
 
 const SeasonalRewards: FC<SeasonalRewardsProps> = ({ currentLevel, rewards }) => {
-	console.log(currentLevel, rewards);
+	const [isScrolling, setIsScrolling] = useState(false);
+	const [scrollLeft, setScrollLeft] = useState(0);
+	const [currentPosition, setCurrentPosition] = useState(0);
+	const scrollList = useRef<HTMLUListElement>(null);
+
+	const onMouseDown = (event: any): void => {
+		setIsScrolling(true);
+		setCurrentPosition(event.clientX);
+	};
+
+	const onMouseUp = (): void => {
+		setIsScrolling(false);
+	};
+
+	const onMouseMove = (event: any): void => {
+		if (isScrolling) {
+			if (scrollList && scrollList.current) {
+				setScrollLeft(scrollLeft + currentPosition - event.clientX);
+				setCurrentPosition(event.clientX);
+				scrollList.current.scrollLeft = scrollLeft + currentPosition - event.clientX;
+			}
+		}
+	};
+
+	const onMouseMoveLeave = (): void => {
+		setIsScrolling(false);
+	};
+
 	return (
 		<div className="seasonal-rewards">
 			<h3 className="seasonal-rewards__title">Seasonal Rewards:</h3>
 			<div className="seasonal-rewards__content">
-				<ul className="seasonal-rewards__list">
+				<ul
+					className="seasonal-rewards__list"
+					ref={scrollList}
+					onMouseDown={onMouseDown}
+					onMouseUp={onMouseUp}
+					onMouseMove={onMouseMove}
+					onMouseLeave={onMouseMoveLeave}
+				>
 					{rewards?.map((item, idx) => {
 						const { requiredLevel, iconUrl } = item;
-						const isAvailableIcon = requiredLevel <= currentLevel ? iconAvailable : iconLock;
+						const isAvailableItem = requiredLevel <= currentLevel;
+						const isAvailableIcon = isAvailableItem ? iconAvailable : iconLock;
+						const isAvailableItemClass = isAvailableItem
+							? 'seasonal-rewards__item'
+							: 'seasonal-rewards__item seasonal-rewards__item--disabled';
+
 						return (
-							<li key={idx} className="seasonal-rewards__item">
+							<li key={idx} className={isAvailableItemClass}>
 								<div className="seasonal-rewards__available">
 									<img src={isAvailableIcon} alt="icon" width="18" height="18" />
 								</div>

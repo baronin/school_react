@@ -5,35 +5,35 @@ const seasonRewardsData: SeasonalRewardsProps = {
 	rewards: [
 		{
 			requiredLevel: 1,
-			iconUrl: '/avatar-builder-components/Body/Boy 1.svg',
+			iconUrl: '/seasonal-rewards/Body.svg',
 		},
 		{
 			requiredLevel: 1,
-			iconUrl: '/avatar-builder-components/Glasses/Glasses_cool.svg',
+			iconUrl: '/seasonal-rewards/Glasses.svg',
 		},
 		{
 			requiredLevel: 2,
-			iconUrl: '/avatar-builder-components/Hats/Hat_jazz.svg',
+			iconUrl: '/seasonal-rewards/Bodytop3.svg',
 		},
 		{
 			requiredLevel: 3,
-			iconUrl: '/avatar-builder-components/shirt/BasicShirt_01.svg',
+			iconUrl: '/seasonal-rewards/Hat.svg',
 		},
 		{
 			requiredLevel: 4,
-			iconUrl: '/avatar-builder-components/hair/BasicHair_03.svg',
+			iconUrl: '/seasonal-rewards/Body.svg',
 		},
 		{
 			requiredLevel: 5,
-			iconUrl: '/avatar-builder-components/Glasses/Glasses_purple.svg',
+			iconUrl: '/seasonal-rewards/Glasses.svg',
 		},
 		{
 			requiredLevel: 5,
-			iconUrl: '/avatar-builder-components/mouth/mouth_laugh.svg',
+			iconUrl: '/seasonal-rewards/Bodytop3.svg',
 		},
 		{
 			requiredLevel: 6,
-			iconUrl: '/avatar-builder-components/special items/Special_mouse.svg',
+			iconUrl: '/seasonal-rewards/Hat.svg',
 		},
 	],
 };
