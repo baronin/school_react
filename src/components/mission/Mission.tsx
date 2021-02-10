@@ -61,7 +61,7 @@ const Mission: FC<MissionUserPathData & Props> = ({
 					))}
 				</ul>
 				<ol className="tasks-list">
-					{stateObjectiveData.map((item, index) => (
+					{stateObjectiveData.map((item, index, missions) => (
 						<Objective
 							onClick={() => {
 								onObjectivePress?.(item, index);
@@ -73,6 +73,7 @@ const Mission: FC<MissionUserPathData & Props> = ({
 							title={item.title}
 							amount={item.amount}
 							completed={item.completed}
+							isActive={Boolean(missions[index - 1]?.completed) ?? true}
 						/>
 					))}
 				</ol>

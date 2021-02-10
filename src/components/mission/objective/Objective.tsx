@@ -11,15 +11,25 @@ type Props = {
 	completed: number;
 	selected: boolean;
 	onClick: () => void;
+	isActive: boolean;
 };
 
-const Objective: FC<Props> = ({ selected = false, onClick, behaviorId, title, completed, count }): ReactElement => {
+const Objective: FC<Props> = ({
+	isActive,
+	selected = false,
+	onClick,
+	behaviorId,
+	title,
+	completed,
+	count,
+}): ReactElement => {
 	const imgCompleted = completed ? checkCompleted : checkDefault;
-	const currentTask = selected ? 'tasks-item task—current' : 'tasks-item';
+	const isDisabledTaskClass = `tasks-item${!completed && !isActive ? ' tasks-item--disabled' : ''}`;
+	const taskUnderlineClass = `tasks-desc${selected ? ' task—current' : ''}`;
 
 	return (
-		<li className={currentTask} id={behaviorId}>
-			<p onClick={onClick} className="tasks-desc">
+		<li className={isDisabledTaskClass} id={behaviorId}>
+			<p onClick={onClick} className={taskUnderlineClass}>
 				{count + 1}. {title}
 			</p>
 			<img className="tasks-icon" src={imgCompleted} alt="icons" width="16" height="16" />

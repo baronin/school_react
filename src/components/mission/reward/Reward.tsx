@@ -19,8 +19,8 @@ type Props = {
 };
 
 const Reward: FC<Props> = ({ isActive, rewards, completed, missionNumber, onClick, isCurrent }) => {
-	const missionImageClass = isCurrent ? 'reward-button reward-button-active' : 'reward-button';
-
+	const rewardButtonClass = `reward-button ${isCurrent ? ' reward-button--active' : ''}`;
+	const rewardItemClass = `reward-item${completed ? ' reward-item--active' : ''}`;
 	const checkIcon = completed ? checkCompleted : checkDefault;
 
 	// choose icon for mission
@@ -48,8 +48,8 @@ const Reward: FC<Props> = ({ isActive, rewards, completed, missionNumber, onClic
 	));
 
 	return (
-		<li id={`mission-number${missionNumber}`} className="reward-item">
-			<button className={missionImageClass} onClick={onClick} disabled={!isActive}>
+		<li id={`mission-number${missionNumber}`} className={rewardItemClass}>
+			<button className={rewardButtonClass} onClick={onClick} disabled={!isActive}>
 				<img src={missionIconsTask} alt="mission task" width="32px" height="32px" />
 			</button>
 			<div className="reward-task-check">

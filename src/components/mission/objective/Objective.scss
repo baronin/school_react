@@ -13,9 +13,15 @@
 	padding-right: 20px;
 }
 
-.tasks-desc {
-	margin-right: 20px;
+.tasks-item--disabled {
+	opacity: 0.3;
 }
+
+.tasks-desc {
+	margin-right: 10px;
+	line-height: 1.4;
+}
+
 .task—current {
 	text-decoration: underline;
 	text-decoration-color: #3DBCA1;
