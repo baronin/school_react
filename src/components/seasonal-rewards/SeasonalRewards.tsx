@@ -54,9 +54,14 @@ const SeasonalRewards: FC<SeasonalRewardsProps> = ({ currentLevel, rewards }) =>
 				>
 					{rewards?.map((item, idx) => {
 						const { requiredLevel, iconUrl } = item;
-						const isAvailableIcon = requiredLevel <= currentLevel ? iconAvailable : iconLock;
+						const isAvailableItem = requiredLevel <= currentLevel;
+						const isAvailableIcon = isAvailableItem ? iconAvailable : iconLock;
+						const isAvailableItemClass = isAvailableItem
+							? 'seasonal-rewards__item'
+							: 'seasonal-rewards__item seasonal-rewards__item--disabled';
+
 						return (
-							<li key={idx} className="seasonal-rewards__item">
+							<li key={idx} className={isAvailableItemClass}>
 								<div className="seasonal-rewards__available">
 									<img src={isAvailableIcon} alt="icon" width="18" height="18" />
 								</div>

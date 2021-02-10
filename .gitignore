@@ -24,4 +24,4 @@ yarn-error.log*
 
 # lock
 package-lock.json
-/public/avatar-builder-components/
+/public/seasonal-rewards/
