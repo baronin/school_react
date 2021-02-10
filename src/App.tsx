@@ -41,6 +41,20 @@ const App = (): ReactElement => {
 					<div className="avatar-component">
 						<button type="button">Toggle</button>
 						<Avatar />
+						<div>
+							<p></p>
+							<ul>
+								<li>
+									<svg>
+										<use href={} />
+									</svg>
+									<div>
+										<img src="" alt="" />
+										<p></p>
+									</div>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</main>
