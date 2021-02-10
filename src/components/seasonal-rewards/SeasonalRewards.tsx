@@ -29,9 +29,14 @@ const SeasonalRewards: FC<SeasonalRewardsProps> = ({ currentLevel, rewards }) =>
 	const onMouseMove = (event: any): void => {
 		if (isScrolling) {
 			if (scrollList && scrollList.current) {
-				setScrollLeft(scrollLeft + currentPosition - event.clientX);
-				setCurrentPosition(event.clientX);
-				scrollList.current.scrollLeft = scrollLeft + currentPosition - event.clientX;
+				if (scrollLeft >= 0) {
+					setScrollLeft(scrollLeft + currentPosition - event.clientX);
+					setCurrentPosition(event.clientX);
+
+					scrollList.current.scrollLeft = scrollLeft + currentPosition - event.clientX;
+				}
+				if (scrollLeft < 0) setScrollLeft(0);
+				if (scrollLeft > scrollList.current.scrollLeft) setScrollLeft(scrollList.current.scrollLeft);
 			}
 		}
 	};
