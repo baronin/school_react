@@ -49,19 +49,19 @@ const missionUserPathData: MissionUserPathData = {
 		objectives: [
 			{
 				behaviorId: 'uuid1',
-				title: 'objectives currentMission 1',
+				title: 'objectives currentMission one',
 				amount: 1,
 				completed: 1,
 			},
 			{
 				behaviorId: 'uuid2',
-				title: 'objectives currentMission 2',
+				title: 'objectives currentMission two',
 				amount: 1,
 				completed: 0,
 			},
 			{
 				behaviorId: 'uuid3',
-				title: 'objectives currentMission 3',
+				title: 'objectives currentMission three',
 				amount: 1,
 				completed: 0,
 			},
