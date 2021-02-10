@@ -15,6 +15,7 @@
 		content: '';
 		position: absolute;
 		top: 50%;
+		transform: translateY(-50%);
 		left: 32px;
 		width: calc(100% - 31px);
 		height: 2px;
@@ -70,7 +71,7 @@
 	}
 }
 
-.reward-button-active::before {
+.reward-button--active::before {
 	content: "";
 	top: -2px;
 	left: -2px;
@@ -106,7 +107,7 @@
 	position: absolute;
 	top: 20px;
 	left: -50%;
-	transform: translateX(-35%);
+	transform: translateX(-30%);
 	width: 100px;
 	text-align: center;
 	font-size: 8px;
