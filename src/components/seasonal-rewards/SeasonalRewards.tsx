@@ -1,4 +1,4 @@
-import { FC, useState, useRef } from 'react';
+import { FC, useState, useRef, MouseEvent } from 'react';
 
 // icons
 import iconAvailable from '../../assets/images/general-icons/completed.svg';
@@ -17,7 +17,7 @@ const SeasonalRewards: FC<SeasonalRewardsProps> = ({ currentLevel, rewards }) =>
 	const [currentPosition, setCurrentPosition] = useState(0);
 	const scrollList = useRef<HTMLUListElement>(null);
 
-	const onMouseDown = (event: any): void => {
+	const onMouseDown = (event: MouseEvent): void => {
 		setIsScrolling(true);
 		setCurrentPosition(event.clientX);
 	};
@@ -26,7 +26,7 @@ const SeasonalRewards: FC<SeasonalRewardsProps> = ({ currentLevel, rewards }) =>
 		setIsScrolling(false);
 	};
 
-	const onMouseMove = (event: any): void => {
+	const onMouseMove = (event: MouseEvent): void => {
 		if (isScrolling) {
 			if (scrollList && scrollList.current) {
 				if (scrollLeft >= 0) {
