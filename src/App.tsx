@@ -62,7 +62,11 @@ const App = (): ReactElement => {
 					<div className="avatar-component">
 						<button type="button">Toggle</button>
 						<Avatar />
-						<AvatarSelect selectCategory="hair" selectCallBack={handlerSelectThing} characterStats={characterStats} />
+						<AvatarSelect
+							selectCategory={activeCategory}
+							selectCallBack={handlerSelectThing}
+							characterStats={characterStats}
+						/>
 					</div>
 				</div>
 			</main>
