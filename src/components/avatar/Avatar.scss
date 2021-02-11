@@ -1,0 +1,44 @@
+.avatar {
+	position: relative;
+	max-width: 855px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.avatar__title {
+	padding: 15px 40px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+}
+.avatar__button-close {
+	position: absolute;
+	top: 18px;
+	right: 18px;
+}
+
+.avatar__content {
+	display: grid;
+	grid-template-columns: 102px auto 102px;
+	padding: 40px 74px;
+}
+
+.avatar__content-center {
+	text-align: center;
+	margin-left: 74px;
+	margin-right: 74px;
+}
+
+.avatar__item-title {
+	margin-bottom: 12px;
+	text-align: center;
+}
+
+.avatar__item-button {
+	display: inline-block;
+	width: 102px;
+	height: 102px;
+	padding: 12px;
+	border: none;
+	border-radius: 50%;
+}

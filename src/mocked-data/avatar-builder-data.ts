@@ -5,7 +5,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		body: {
 			id: 'uuid',
 			requiredLevel: 1,
-			iconUrl: 'path/to/body/file/in/avatar-icons',
+			iconUrl: '/avatar-builder-components/body/Boy 1.svg',
 			components: [
 				{
 					url: 'path/to/file/in/avatar-builder-components/body',
@@ -16,7 +16,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		hair: {
 			id: 'uuid',
 			requiredLevel: 1,
-			iconUrl: 'path/to/hair/file/in/avatar-icons',
+			iconUrl: '/avatar-builder-components/hair/BasicHair_01.svg',
 			components: [
 				{
 					url: 'path/to/file/in/avatar-builder-components/hair_back',
@@ -31,7 +31,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		eyes: {
 			id: 'uuid',
 			requiredLevel: 1,
-			iconUrl: 'path/to/eyes/file/in/avatar-icons',
+			iconUrl: '/avatar-builder-components/Eyes/Eyes makeup.svg',
 			components: [
 				{
 					url: 'path/to/file/in/avatar-builder-components/eyes',
@@ -42,7 +42,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		nose: {
 			id: 'uuid',
 			requiredLevel: 1,
-			iconUrl: 'path/to/nose/file/in/avatar-icons',
+			iconUrl: '/avatar-builder-components/nose/nose_long.svg',
 			components: [
 				{
 					url: 'path/to/file/in/avatar-builder-components/nose',
@@ -53,7 +53,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		mouth: {
 			id: 'uuid',
 			requiredLevel: 1,
-			iconUrl: 'path/to/mouth/file/in/avatar-icons',
+			iconUrl: '/avatar-builder-components/mouth/mouth_laugh.svg',
 			components: [
 				{
 					url: 'path/to/file/in/avatar-builder-components/mouth',
@@ -65,7 +65,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		glasses: {
 			id: 'uuid',
 			requiredLevel: 1,
-			iconUrl: 'path/to/glasses/file/in/avatar-icons',
+			iconUrl: '/avatar-builder-components/Glasses/Glasses_cool.svg',
 			components: [
 				{
 					url: 'path/to/file/in/avatar-builder-components/glasses',
@@ -76,7 +76,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		shirt: {
 			id: 'uuid',
 			requiredLevel: 1,
-			iconUrl: 'path/to/shirt/file/in/avatar-icons',
+			iconUrl: '/avatar-builder-components/shirt/BasicShirt_01.svg',
 			components: [
 				{
 					url: 'path/to/file/in/avatar-builder-components/shirt_back',
@@ -91,7 +91,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		special: {
 			id: 'uuid',
 			requiredLevel: 1,
-			iconUrl: 'path/to/special/file/in/avatar-icons',
+			iconUrl: '/avatar-builder-components/special-items/Special_basketball.svg',
 			components: [
 				{
 					url: 'path/to/file/in/avatar-builder-components/special',
