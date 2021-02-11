@@ -7,6 +7,7 @@ import SeasonalRewards from './components/seasonal-rewards';
 import missionUserPathData from './mocked-data/mission-user-path-data';
 import seasonRewardsData from './mocked-data/season-rewards-data';
 import Avatar from './components/avatar';
+import AvatarSelect from './components/avatar/avatar-select';
 
 const App = (): ReactElement => {
 	const {
@@ -41,7 +42,8 @@ const App = (): ReactElement => {
 					<div className="avatar-component">
 						<button type="button">Toggle</button>
 						<Avatar />
-						<div>
+						<AvatarSelect selectCategory={'hair'} />
+						{/* <div>
 							<p></p>
 							<ul>
 								<li>
@@ -54,7 +56,7 @@ const App = (): ReactElement => {
 									</div>
 								</li>
 							</ul>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</main>
