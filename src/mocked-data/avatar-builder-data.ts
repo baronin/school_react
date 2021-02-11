@@ -154,7 +154,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 				],
 			},
 			{
-				id: 'uuid',
+				id: 'uuid1',
 				requiredLevel: 1,
 				iconUrl: 'path/to/hair/file/in/avatar-icons',
 				components: [
@@ -165,7 +165,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 				],
 			},
 			{
-				id: 'uuid',
+				id: 'uuid2',
 				requiredLevel: 4,
 				iconUrl: 'path/to/hair/file/in/avatar-icons',
 				components: [

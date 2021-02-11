@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState, useEffect } from 'react';
 import Mission from './components/mission';
 import Header from './components/header';
 import SeasonalRewards from './components/seasonal-rewards';
@@ -20,7 +20,27 @@ const App = (): ReactElement => {
 		upcomingMissions,
 	} = missionUserPathData;
 
+	const [activeCategory, setActiveCategory] = useState('hair');
+	const [characterStats, setCharacterStats] = useState({
+		hair: '',
+		eyes: '',
+		nose: '',
+		mouth: '',
+		hat: '',
+		shirt: '',
+		body: '',
+		special: '',
+	});
+
+	useEffect(() => {
+		setActiveCategory('hair');
+	});
+
 	const { currentLevel, rewards } = seasonRewardsData;
+
+	const handlerSelectThing = (selectId: any): void => {
+		setCharacterStats({ ...characterStats, [activeCategory]: selectId });
+	};
 
 	return (
 		<div className="app">
@@ -42,21 +62,7 @@ const App = (): ReactElement => {
 					<div className="avatar-component">
 						<button type="button">Toggle</button>
 						<Avatar />
-						<AvatarSelect selectCategory={'hair'} />
-						{/* <div>
-							<p></p>
-							<ul>
-								<li>
-									<svg>
-										<use href={} />
-									</svg>
-									<div>
-										<img src="" alt="" />
-										<p></p>
-									</div>
-								</li>
-							</ul>
-						</div> */}
+						<AvatarSelect selectCategory="hair" selectCallBack={handlerSelectThing} characterStats={characterStats} />
 					</div>
 				</div>
 			</main>

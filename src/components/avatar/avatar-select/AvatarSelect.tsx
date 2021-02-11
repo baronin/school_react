@@ -1,59 +1,53 @@
-import { FC, useEffect } from 'react';
+import { FC, useState, useEffect } from 'react';
 import './AvatarSelect.scss';
 // import { AvatarData } from '../../types/types';
 // mocked data
 import missionUserPathData from '../../../mocked-data/avatar-builder-data';
+import lockIcon from '../../../assets/images/general-icons/lock.svg';
 
 type Props = {
 	readonly selectCategory: string;
+	readonly characterStats: any;
+	selectCallBack: (select: any) => void;
 };
 
-const AvatarSelect: FC<Props> = ({ selectCategory }) => {
-	// const characterLevel: number = missionUserPathData.currentLevel;
+const AvatarSelect: FC<Props> = ({ selectCategory, characterStats, selectCallBack }) => {
+	const characterLevel: number = missionUserPathData.currentLevel;
+	const [selectThing, setSelectThing] = useState(missionUserPathData.availableItems.hair[0].id);
 
 	useEffect(() => {
-		console.log(selectCategory);
+		console.log(selectCategory, selectThing);
+		if (characterStats[selectCategory].length) setSelectThing(characterStats[selectCategory]);
 	});
+
+	const handlerSelectFind = (thingId: any) => {
+		setSelectThing(thingId);
+		selectCallBack(thingId);
+	};
 
 	const selectList = missionUserPathData.availableItems.hair.map((item, index) => {
 		return (
-			<li key={index}>
-				<img className="``" src={`image-mockups/hairs/${index + 1}.svg`} />
-				<div className="">
-					<img src="../../../assets/images/general-icons/lock.svg" />
-					<p>{item.requiredLevel}</p>
+			<li
+				className={`avatar-select__item ${selectThing === item.id ? 'avatar-select__item_is_select' : ''} ${
+					item.requiredLevel > characterLevel ? 'avatar-select__item_is-block' : ''
+				}`}
+				key={index}
+				onClick={() => handlerSelectFind(item.id)}
+			>
+				<img className="avatar-select-preview" src={`image-mockups/hairs/${index + 1}.svg`} />
+				<div className="avatar-select__lock">
+					<img className="avatar-select__lock-icon" src={lockIcon} />
+					<p className="avatar-select__lock-text">{item.requiredLevel}</p>
 				</div>
 			</li>
 		);
 	});
 
 	return (
-		<div>
-			<p></p>
-			<ul>{selectList}</ul>
+		<div className="avatar-select">
+			<p className="avatar-select__title">Välj:</p>
+			<ul className="avatar-select__list">{selectList}</ul>
 		</div>
-		// <div className="avatar">
-		// 	<h2 className="avatar__title">Bygg din avatar!</h2>
-		// 	<div className="avatar__content">
-		// 		<div className="avatar__content-left">Left</div>
-		// 		<div className="avatar__content-center">
-		// 			Center
-		// 			<div className="avatar__builder">icon</div>
-		// 			<div className="avatar__selected">
-		// 				<h3>selected</h3>
-		// 				<div className="avatar__selected-list">
-		// 					<div className="avatar__selected-item">
-		// 						<img src="#" alt="item" />
-		// 					</div>
-		// 					<div className="avatar__selected-item">
-		// 						<img src="#" alt="item" />
-		// 					</div>
-		// 				</div>
-		// 			</div>
-		// 		</div>
-		// 		<div className="avatar__content-right">Right</div>
-		// 	</div>
-		// </div>
 	);
 };
 
