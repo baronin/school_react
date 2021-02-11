@@ -29,9 +29,6 @@
                 border: 5px solid #3dbca1;
             }
 
-            .avatar-select-preview {
-            }
-
             .avatar-select__lock {
                 position: absolute;
                 display: none;
@@ -55,6 +52,7 @@
         .avatar-select__item_is-block {
             &:hover {
                 border: none;
+                cursor: auto;
             }
 
             .avatar-select-preview {

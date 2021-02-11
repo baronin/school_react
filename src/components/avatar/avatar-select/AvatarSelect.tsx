@@ -1,13 +1,17 @@
 import { FC, useState, useEffect } from 'react';
 import './AvatarSelect.scss';
-// import { AvatarData } from '../../types/types';
 // mocked data
 import missionUserPathData from '../../../mocked-data/avatar-builder-data';
-import lockIcon from '../../../assets/images/general-icons/lock.svg';
+// images
+import lockIcon from '../../../assets/images/general-icons/padlock.png';
+
+interface CharacterStats {
+	[key: string]: string;
+}
 
 type Props = {
 	readonly selectCategory: string;
-	readonly characterStats: any;
+	readonly characterStats: CharacterStats;
 	selectCallBack: (select: any) => void;
 };
 
@@ -16,13 +20,14 @@ const AvatarSelect: FC<Props> = ({ selectCategory, characterStats, selectCallBac
 	const [selectThing, setSelectThing] = useState(missionUserPathData.availableItems.hair[0].id);
 
 	useEffect(() => {
-		console.log(selectCategory, selectThing);
 		if (characterStats[selectCategory].length) setSelectThing(characterStats[selectCategory]);
 	});
 
-	const handlerSelectFind = (thingId: any) => {
-		setSelectThing(thingId);
-		selectCallBack(thingId);
+	const handlerSelectThing = (selectItem: any) => {
+		if (selectItem && selectItem.requiredLevel > characterLevel) return;
+
+		setSelectThing(selectItem.id);
+		selectCallBack(selectItem.id);
 	};
 
 	const selectList = missionUserPathData.availableItems.hair.map((item, index) => {
@@ -32,7 +37,7 @@ const AvatarSelect: FC<Props> = ({ selectCategory, characterStats, selectCallBac
 					item.requiredLevel > characterLevel ? 'avatar-select__item_is-block' : ''
 				}`}
 				key={index}
-				onClick={() => handlerSelectFind(item.id)}
+				onClick={() => handlerSelectThing(item)}
 			>
 				<img className="avatar-select-preview" src={`image-mockups/hairs/${index + 1}.svg`} />
 				<div className="avatar-select__lock">

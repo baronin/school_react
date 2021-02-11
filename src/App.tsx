@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useEffect } from 'react';
+import React, { ReactElement, useState } from 'react';
 import Mission from './components/mission';
 import Header from './components/header';
 import SeasonalRewards from './components/seasonal-rewards';
@@ -20,7 +20,7 @@ const App = (): ReactElement => {
 		upcomingMissions,
 	} = missionUserPathData;
 
-	const [activeCategory, setActiveCategory] = useState('hair');
+	const [activeCategory] = useState('hair');
 	const [characterStats, setCharacterStats] = useState({
 		hair: '',
 		eyes: '',
@@ -30,10 +30,6 @@ const App = (): ReactElement => {
 		shirt: '',
 		body: '',
 		special: '',
-	});
-
-	useEffect(() => {
-		setActiveCategory('hair');
 	});
 
 	const { currentLevel, rewards } = seasonRewardsData;
