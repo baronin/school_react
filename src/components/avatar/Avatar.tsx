@@ -1,12 +1,28 @@
-import { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { AvatarBuilderProps } from '../../types/types';
 import './Avatar.scss';
 import AvatarItemBlock from './avatar-item';
+import AvatarSelect from './avatar-select';
 
 const Avatar: FC<AvatarBuilderProps> = ({ current, currentLevel, availableItems }) => {
-	console.log('current: ', current);
-	console.log('current: ', currentLevel);
-	console.log('current: ', availableItems);
+	console.log('availableItems: ', currentLevel, availableItems);
+	const [activeCategory] = useState('hair');
+	const [characterStats, setCharacterStats] = useState({
+		hair: '',
+		eyes: '',
+		nose: '',
+		mouth: '',
+		hat: '',
+		shirt: '',
+		body: '',
+		special: '',
+	});
+
+
+	const handlerSelectThing = (selectId: any): void => {
+		setCharacterStats({ ...characterStats, [activeCategory]: selectId });
+	};
+
 	return (
 		<div className="avatar">
 			<h2 className="avatar__title">Bygg din avatar!</h2>
@@ -23,14 +39,11 @@ const Avatar: FC<AvatarBuilderProps> = ({ current, currentLevel, availableItems 
 						<h3>Body</h3>
 						<img src={current.body?.iconUrl} alt="Avatar" width="300" height="300" />
 					</div>
-					<div className="avatar__selected">
-						<h3>Selected</h3>
-						<div className="avatar__selected-list">
-							<div className="avatar__selected-item">
-								<img src="#" alt="item" />
-							</div>
-						</div>
-					</div>
+					<AvatarSelect
+						selectCategory={activeCategory}
+						selectCallBack={handlerSelectThing}
+						characterStats={characterStats}
+					/>
 				</div>
 				<div className="avatar__content-item">
 					<AvatarItemBlock avatarItem={current.hat} nameItem={'hat'} />
