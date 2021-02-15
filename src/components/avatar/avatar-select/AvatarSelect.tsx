@@ -21,7 +21,7 @@ const AvatarSelect: FC<Props> = ({ selectCategory, characterStats, selectCallBac
 
 	useEffect(() => {
 		if (characterStats[selectCategory].length) setSelectThing(characterStats[selectCategory]);
-	});
+	}, [characterStats, selectCategory]);
 
 	const handlerSelectThing = (selectItem: any) => {
 		if (selectItem && selectItem.requiredLevel > characterLevel) return;

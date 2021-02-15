@@ -24,7 +24,7 @@ const SeasonalRewards: FC<SeasonalRewardsProps> = ({ currentLevel, rewards }) =>
 			setIsScroll(true);
 		} else if (parentScrollList && parentScrollList.current)
 			parentScrollList.current.classList.add('seasonal-rewards__content_shadow_disabled');
-	});
+	}, []);
 
 	const onMouseDown = (event: MouseEvent): void => {
 		setIsScrolling(true);
