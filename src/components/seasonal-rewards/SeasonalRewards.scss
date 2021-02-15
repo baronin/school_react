@@ -4,24 +4,30 @@
 	position: relative;
 	border: 1px solid $color-grey;
 	border-top-width: 0;
-
 }
 
 .seasonal-rewards__content {
 	position: relative;
 	&::before {
-		content: '';
+		content: "";
 		position: absolute;
 		top: 0;
 		right: 0;
 		width: 20px;
 		height: 100%;
-		background: linear-gradient(to right,#CCCCCC10, #CFCFCF);
+		background: linear-gradient(to right, #cccccc10, #cfcfcf);
+	}
+}
+
+.seasonal-rewards__content_shadow_disabled {
+	&::before {
+		content: none;
+		background: none;
 	}
 }
 
 .seasonal-rewards__title {
-  padding: 5px 10px;
+	padding: 5px 10px;
 }
 
 .seasonal-rewards__list {
@@ -33,33 +39,35 @@
 		// width: 2px;               /* width of the entire scrollbar */
 	}
 	&::-webkit-scrollbar-track {
-		background: #BFBFBF;        /* color of the tracking area */
+		background: #bfbfbf; /* color of the tracking area */
 	}
 	&::-webkit-scrollbar-thumb {
-		background-color: #3A3A3A;    /* color of the scroll thumb */
-		border-radius: 20px;       /* roundness of the scroll thumb */
-		border: 3px solid #3A3A3A;  /* creates padding around scroll thumb */
+		background-color: #3a3a3a; /* color of the scroll thumb */
+		border-radius: 20px; /* roundness of the scroll thumb */
+		border: 3px solid #3a3a3a; /* creates padding around scroll thumb */
 	}
 }
 
 .seasonal-rewards__item {
 	position: relative;
-  min-width: 80px;
-  width: 100%;
-  min-height: 94px;
+	max-width: 80px;
+	width: 100%;
+	min-height: 94px;
+	flex-grow: 1;
+	flex-shrink: 0;
 	padding: 20px 10px 10px 10px;
-  border-top: 1px solid $color-grey;
-  border-right: 1px solid $color-grey;
+	border-top: 1px solid $color-grey;
+	border-right: 1px solid $color-grey;
 
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 
-  &:first-child,
-  &:last-child {
-    border-left: none;
+	&:first-child,
+	&:last-child {
+		border-left: none;
 	}
 
 	p {
@@ -68,7 +76,8 @@
 }
 
 .seasonal-rewards__item--disabled {
-	.seasonal-rewards__item-icon, p {
+	.seasonal-rewards__item-icon,
+	p {
 		opacity: 0.25;
 	}
 }

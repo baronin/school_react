@@ -18,7 +18,6 @@ const Avatar: FC<AvatarBuilderProps> = ({ current, currentLevel, availableItems 
 		special: '',
 	});
 
-
 	const handlerSelectThing = (selectId: any): void => {
 		setCharacterStats({ ...characterStats, [activeCategory]: selectId });
 	};
