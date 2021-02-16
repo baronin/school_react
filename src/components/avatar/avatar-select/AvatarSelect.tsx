@@ -4,6 +4,7 @@ import './AvatarSelect.scss';
 import missionUserPathData from '../../../mocked-data/avatar-builder-data';
 // images
 import lockIcon from '../../../assets/images/general-icons/padlock.png';
+import { AvatarItem, AvatarSlot } from '../../../types/types';
 
 interface CharacterStats {
 	[key: string]: string;
@@ -13,12 +14,13 @@ type Props = {
 	readonly selectCategory: string;
 	readonly characterStats: CharacterStats;
 	selectCallBack: (select: any) => void;
+	currentAvailableItems?: Record<AvatarSlot, AvatarItem[] | undefined>;
 };
 
-const AvatarSelect: FC<Props> = ({ selectCategory, characterStats, selectCallBack }) => {
+const AvatarSelect: FC<Props> = ({ selectCategory, characterStats, selectCallBack, currentAvailableItems }) => {
 	const characterLevel: number = missionUserPathData.currentLevel;
 	const [selectThing, setSelectThing] = useState(missionUserPathData.availableItems.hair[0].id);
-
+	console.log('avatar slot', currentAvailableItems);
 	useEffect(() => {
 		if (characterStats[selectCategory].length) setSelectThing(characterStats[selectCategory]);
 	});

@@ -16,7 +16,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		hair: {
 			id: 'uuid',
 			requiredLevel: 1,
-			iconUrl: '/avatar-builder-components/hair/BasicHair_01.svg',
+			iconUrl: '/avatar-icons/BasicHair_01.png',
 			components: [
 				{
 					url: 'path/to/file/in/avatar-builder-components/hair_back',
@@ -31,7 +31,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		eyes: {
 			id: 'uuid',
 			requiredLevel: 1,
-			iconUrl: '/avatar-builder-components/Eyes/Eyes makeup.svg',
+			iconUrl: '/avatar-icons/Eyes brown.png',
 			components: [
 				{
 					url: 'path/to/file/in/avatar-builder-components/eyes',
@@ -42,7 +42,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		nose: {
 			id: 'uuid',
 			requiredLevel: 1,
-			iconUrl: '/avatar-builder-components/nose/nose_long.svg',
+			iconUrl: '/avatar-icons/nose_wide.png',
 			components: [
 				{
 					url: 'path/to/file/in/avatar-builder-components/nose',
@@ -53,7 +53,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		mouth: {
 			id: 'uuid',
 			requiredLevel: 1,
-			iconUrl: '/avatar-builder-components/mouth/mouth_laugh.svg',
+			iconUrl: '/avatar-icons/mouth_smile.png',
 			components: [
 				{
 					url: 'path/to/file/in/avatar-builder-components/mouth',
@@ -65,7 +65,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		glasses: {
 			id: 'uuid',
 			requiredLevel: 1,
-			iconUrl: '/avatar-builder-components/Glasses/Glasses_cool.svg',
+			iconUrl: '/avatar-icons/Glasses_monocle.png',
 			components: [
 				{
 					url: 'path/to/file/in/avatar-builder-components/glasses',
@@ -76,7 +76,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		shirt: {
 			id: 'uuid',
 			requiredLevel: 1,
-			iconUrl: '/avatar-builder-components/shirt/BasicShirt_01.svg',
+			iconUrl: '/avatar-icons/Shirt_suit.png',
 			components: [
 				{
 					url: 'path/to/file/in/avatar-builder-components/shirt_back',
@@ -91,7 +91,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		special: {
 			id: 'uuid',
 			requiredLevel: 1,
-			iconUrl: '/avatar-builder-components/special-items/Special_basketball.svg',
+			iconUrl: '/avatar-icons/Special_controller.png',
 			components: [
 				{
 					url: 'path/to/file/in/avatar-builder-components/special',
@@ -106,7 +106,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 			{
 				id: 'uuid',
 				requiredLevel: 1,
-				iconUrl: 'path/to/body/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/BasicHair_01.png',
 				components: [
 					{
 						url: 'path/to/file/in/avatar-builder-components/body',
@@ -117,7 +117,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 			{
 				id: 'uuid2',
 				requiredLevel: 1,
-				iconUrl: 'path/to/body/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/BasicHair_01.png',
 				components: [
 					{
 						url: 'path/to/file/in/avatar-builder-components/body',
@@ -156,7 +156,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 			{
 				id: 'uuid1',
 				requiredLevel: 1,
-				iconUrl: 'path/to/hair/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/BasicHair_01.png',
 				components: [
 					{
 						url: 'path/to/file/in/avatar-builder-components/hair',
@@ -184,7 +184,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 			{
 				id: 'uuid',
 				requiredLevel: 1,
-				iconUrl: 'path/to/eyes/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/BasicHair_01.png',
 				components: [
 					{
 						url: 'path/to/file/in/avatar-builder-components/eyes',
@@ -195,7 +195,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 			{
 				id: 'uuid',
 				requiredLevel: 1,
-				iconUrl: 'path/to/eyes/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/BasicHair_01.png',
 				components: [
 					{
 						url: 'path/to/file/in/avatar-builder-components/eyes',
@@ -206,7 +206,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 			{
 				id: 'uuid',
 				requiredLevel: 1,
-				iconUrl: 'path/to/eyes/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/BasicHair_01.png',
 				components: [
 					{
 						url: 'path/to/file/in/avatar-builder-components/eyes',
@@ -219,7 +219,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 			{
 				id: 'uuid',
 				requiredLevel: 1,
-				iconUrl: 'path/to/nose/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/BasicHair_01.png',
 				components: [
 					{
 						url: 'path/to/file/in/avatar-builder-components/nose',
@@ -254,7 +254,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 			{
 				id: 'uuid',
 				requiredLevel: 1,
-				iconUrl: 'path/to/mouth/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/mouth_fun.png',
 				components: [
 					{
 						url: 'path/to/file/in/avatar-builder-components/mouth',
@@ -289,7 +289,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 			{
 				id: 'uuid',
 				requiredLevel: 1,
-				iconUrl: 'path/to/hat/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/Hat_jazz.png',
 				components: [
 					{
 						url: 'path/to/file/in/avatar-builder-components/hat_back',
@@ -304,7 +304,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 			{
 				id: 'uuid',
 				requiredLevel: 1,
-				iconUrl: 'path/to/hat/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/Hat_jazz.png',
 				components: [
 					{
 						url: 'path/to/file/in/avatar-builder-components/hat',
