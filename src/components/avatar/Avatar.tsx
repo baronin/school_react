@@ -6,7 +6,7 @@ import AvatarSelect from './avatar-select';
 import AvatarBuild from './avatar-build';
 
 const Avatar: FC<AvatarBuilderProps> = ({ current, currentLevel, availableItems }) => {
-	console.log('currentLevel: ', currentLevel);
+	console.log('availableItems: ', currentLevel, availableItems);
 	const [activeCategory, setActiveCategory] = useState('hair');
 	const [characterStats, setCharacterStats] = useState({
 		hair: '',

@@ -23,7 +23,7 @@ const AvatarSelect: FC<Props> = ({ selectCategory, characterStats, selectCallBac
 	console.log('avatar slot', currentAvailableItems);
 	useEffect(() => {
 		if (characterStats[selectCategory].length) setSelectThing(characterStats[selectCategory]);
-	});
+	}, [characterStats, selectCategory]);
 
 	const handlerSelectThing = (selectItem: any) => {
 		if (selectItem && selectItem.requiredLevel > characterLevel) return;
