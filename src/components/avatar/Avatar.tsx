@@ -1,30 +1,22 @@
 import React, { FC, useState } from 'react';
-import { AvatarBuilderProps } from '../../types/types';
+import { AvatarBuilderProps, AvatarItem, AvatarSlot } from '../../types/types';
 import './Avatar.scss';
 import AvatarItemBlock from './avatar-item';
 import AvatarSelect from './avatar-select';
 import AvatarBuild from './avatar-build';
 
 const Avatar: FC<AvatarBuilderProps> = ({ current, currentLevel, availableItems }) => {
-	console.log('availableItems: ', currentLevel, availableItems);
-	const [activeCategory, setActiveCategory] = useState('hair');
-	const [characterStats, setCharacterStats] = useState({
-		hair: '',
-		eyes: '',
-		nose: '',
-		mouth: '',
-		hat: '',
-		shirt: '',
-		body: '',
-		special: '',
-	});
-	const [currentAvatarBuild] = useState(current);
-	const [currentAvailableItems] = useState(availableItems);
-	const handlerSelectThing = (selectId: string): void => {
-		setCharacterStats({ ...characterStats, [activeCategory]: selectId });
-	};
+	console.log('currentLevel: ', currentLevel);
+	const [avatar, changeAvatar] = useState(current);
+	const [activeSlot, setActiveSlot] = useState<AvatarSlot>('hair');
+	const leftSlots: AvatarSlot[] = ['hair', 'eyes', 'nose', 'mouth'];
+	const rightSlots: AvatarSlot[] = ['hat', 'glasses', 'shirt', 'special'];
 
-	console.log('currentAvailableItems', currentAvailableItems);
+	const setAvatarItem = (item: AvatarItem) => {
+		const { ...newAvatar } = avatar;
+		newAvatar[activeSlot] = item;
+		changeAvatar(newAvatar);
+	};
 
 	return (
 		<div className="avatar">
@@ -32,38 +24,32 @@ const Avatar: FC<AvatarBuilderProps> = ({ current, currentLevel, availableItems 
 			<button type="button" className="avatar__button-close" aria-label="Close" />
 			<div className="avatar__content">
 				<div className="avatar__content-item">
-					<AvatarItemBlock
-						avatarItem={availableItems.hair}
-						nameItem={'hair'}
-						onActivate={() => setActiveCategory('hair')}
-					/>
-					{/* <AvatarItemBlock
-						avatarItem={availableItems.hair}
-						nameItem={'hair'}
-						onActivate={() => setActiveCategory('hair')}
-					/>
-					<AvatarItemBlock
-						avatarItem={availableItems.eyes}
-						nameItem={'eyes'}
-						onActivate={() => setActiveCategory('eyes')}
-					/>
-					<AvatarItemBlock avatarItem={availableItems.nose} nameItem={'nose'} />
-					<AvatarItemBlock avatarItem={availableItems.mouth} nameItem={'mouth'} /> */}
+					{leftSlots.map((slot) => (
+						<AvatarItemBlock
+							key={slot}
+							avatarItem={current[slot]}
+							nameItem={slot}
+							onActivate={() => setActiveSlot(slot)}
+						/>
+					))}
 				</div>
 				<div className="avatar__content-center">
-					<AvatarBuild {...currentAvatarBuild} />
+					<AvatarBuild {...avatar} />
 					<AvatarSelect
-						selectCategory={activeCategory}
-						selectCallBack={handlerSelectThing}
-						characterStats={characterStats}
-						currentAvailableItems={currentAvailableItems}
+						availableItems={availableItems[activeSlot]}
+						currentLevel={currentLevel}
+						onChangeItem={setAvatarItem}
 					/>
 				</div>
 				<div className="avatar__content-item">
-					{/* <AvatarItemBlock avatarItem={current.hat} nameItem={'hat'} />
-					<AvatarItemBlock avatarItem={current.glasses} nameItem={'glasses'} />
-					<AvatarItemBlock avatarItem={current.shirt} nameItem={'shirt'} />
-					<AvatarItemBlock avatarItem={current.special} nameItem={'special'} /> */}
+					{rightSlots.map((slot) => (
+						<AvatarItemBlock
+							key={slot}
+							avatarItem={current[slot]}
+							nameItem={slot}
+							onActivate={() => setActiveSlot(slot)}
+						/>
+					))}
 				</div>
 			</div>
 		</div>
