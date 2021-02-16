@@ -78,16 +78,6 @@ const SeasonalRewards: FC<SeasonalRewardsProps> = ({ currentLevel, rewards }) =>
 							</li>
 						);
 					})}
-					<li className="seasonal-rewards__item">
-						<div className="seasonal-rewards__available">
-							<img src={iconLock} alt="icon" width="18" height="18" />
-						</div>
-						<div className="seasonal-rewards__item-icon">
-							<img src="hair" alt="icon items" />
-						</div>
-						<p>Avatar item</p>
-						<p>level next</p>
-					</li>
 				</ul>
 			</div>
 		</div>

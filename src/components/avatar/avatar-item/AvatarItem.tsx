@@ -4,9 +4,16 @@ import { AvatarItem, AvatarSlot } from '../../../types/types';
 type Props = {
 	avatarItem?: AvatarItem[];
 	nameItem: AvatarSlot;
+	onActivate?: () => void;
 };
 
-const AvatarItemBlock: FC<Props> = ({ avatarItem, nameItem }) => {
+const AvatarItemBlock: FC<Props> = ({ avatarItem, nameItem, onActivate }) => {
+	console.log(nameItem);
+	console.log('avatarItem ', avatarItem);
+	console.log(onActivate);
+	/**
+	 * { avatarItem, nameItem, onActivate }
+	 */
 	const defaultIcon: { [key in AvatarSlot]: string } = {
 		body: '/avatar-builder-components/Boy 1.svg',
 		hair: '/avatar-builder-components/BasicHair_01.svg',
@@ -18,8 +25,8 @@ const AvatarItemBlock: FC<Props> = ({ avatarItem, nameItem }) => {
 		shirt: '/avatar-builder-components/shirt/BasicShirt_01.svg',
 		special: '/avatar-builder-components/special-items/Special_basketball.svg',
 	};
-	const currentImage = avatarItem?.iconUrl || defaultIcon[nameItem];
-	console.log('currentImage: ', 1 + 2, currentImage);
+	console.log(defaultIcon);
+	// const currentImage = avatarItem?.iconUrl || defaultIcon[nameItem];
 
 	return (
 		<div>
