@@ -2,15 +2,12 @@ import { FC } from 'react';
 import { AvatarItem, AvatarSlot } from '../../../types/types';
 
 type Props = {
-	avatarItem?: AvatarItem[];
+	avatarItem?: AvatarItem;
 	nameItem: AvatarSlot;
 	onActivate?: () => void;
 };
 
 const AvatarItemBlock: FC<Props> = ({ avatarItem, nameItem, onActivate }) => {
-	console.log(nameItem);
-	console.log('avatarItem ', avatarItem);
-	console.log(onActivate);
 	/**
 	 * { avatarItem, nameItem, onActivate }
 	 */
@@ -25,18 +22,14 @@ const AvatarItemBlock: FC<Props> = ({ avatarItem, nameItem, onActivate }) => {
 		shirt: '/avatar-builder-components/shirt/BasicShirt_01.svg',
 		special: '/avatar-builder-components/special-items/Special_basketball.svg',
 	};
-	console.log(defaultIcon);
-	// const currentImage = avatarItem?.iconUrl || defaultIcon[nameItem];
+	const currentImage = avatarItem?.iconUrl || defaultIcon[nameItem];
 
 	return (
-		<div>
-			test
-			{/* <div id={avatarItem?.id} className="avatar__item">
-				<h3 className="avatar__item-title">{nameItem}</h3>
-				<button type="button" className="avatar__item-button" onClick={onActivate}>
-					<img src={currentImage} alt={`avatar ${nameItem}`} />
-				</button>
-			</div> */}
+		<div id={avatarItem?.id} className="avatar__item">
+			<h3 className="avatar__item-title">{nameItem}</h3>
+			<button type="button" className="avatar__item-button" onClick={onActivate}>
+				<img src={currentImage} alt={`avatar ${nameItem}`} />
+			</button>
 		</div>
 	);
 };
