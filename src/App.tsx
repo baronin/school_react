@@ -21,6 +21,8 @@ const App = (): ReactElement => {
 	} = missionUserPathData;
 	const { currentLevel, rewards } = seasonRewardsData;
 
+	const { current, availableItems } = avatarBuilderData;
+
 	return (
 		<div className="app">
 			<Header />
@@ -40,7 +42,7 @@ const App = (): ReactElement => {
 					</section>
 					<div className="avatar-component">
 						<button type="button">Toggle</button>
-						<Avatar {...avatarBuilderData} />
+						<Avatar current={current} availableItems={availableItems} currentLevel={currentLevel} />
 					</div>
 				</div>
 			</main>
