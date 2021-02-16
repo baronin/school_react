@@ -1,59 +1,27 @@
-import { FC, useState, useEffect } from 'react';
+import { FC } from 'react';
 import './AvatarSelect.scss';
-// mocked data
-import missionUserPathData from '../../../mocked-data/avatar-builder-data';
-// images
-import lockIcon from '../../../assets/images/general-icons/padlock.png';
-import { AvatarItem, AvatarSlot } from '../../../types/types';
-
-interface CharacterStats {
-	[key: string]: string;
-}
+// import lockIcon from '../../../assets/images/general-icons/padlock.png';
+import { AvatarItem } from '../../../types/types';
 
 type Props = {
-	readonly selectCategory: string;
-	readonly characterStats: CharacterStats;
-	selectCallBack: (select: any) => void;
-	currentAvailableItems?: Record<AvatarSlot, AvatarItem[] | undefined>;
+	availableItems?: AvatarItem[];
+	currentLevel: number;
+	onChangeItem: (item: AvatarItem) => void;
 };
 
-const AvatarSelect: FC<Props> = ({ selectCategory, characterStats, selectCallBack, currentAvailableItems }) => {
-	const characterLevel: number = missionUserPathData.currentLevel;
-	const [selectThing, setSelectThing] = useState(missionUserPathData.availableItems.hair[0].id);
-	console.log('avatar slot', currentAvailableItems);
-	useEffect(() => {
-		if (characterStats[selectCategory].length) setSelectThing(characterStats[selectCategory]);
-	}, [characterStats, selectCategory]);
-
-	const handlerSelectThing = (selectItem: any) => {
-		if (selectItem && selectItem.requiredLevel > characterLevel) return;
-
-		setSelectThing(selectItem.id);
-		selectCallBack(selectItem.id);
-	};
-
-	const selectList = missionUserPathData.availableItems.hair.map((item, index) => {
-		return (
-			<li
-				className={`avatar-select__item ${selectThing === item.id ? 'avatar-select__item_is_select' : ''} ${
-					item.requiredLevel > characterLevel ? 'avatar-select__item_is-block' : ''
-				}`}
-				key={index}
-				onClick={() => handlerSelectThing(item)}
-			>
-				<img className="avatar-select-preview" src={`image-mockups/hairs/${index + 1}.svg`} />
-				<div className="avatar-select__lock">
-					<img className="avatar-select__lock-icon" src={lockIcon} />
-					<p className="avatar-select__lock-text">{item.requiredLevel}</p>
-				</div>
-			</li>
-		);
-	});
+const AvatarSelect: FC<Props> = ({ availableItems, currentLevel, onChangeItem }) => {
+	console.log('currentLevel', currentLevel);
 
 	return (
 		<div className="avatar-select">
 			<p className="avatar-select__title">Välj:</p>
-			<ul className="avatar-select__list">{selectList}</ul>
+			<ul className="avatar-select__list">
+				{availableItems?.map((item, idx) => (
+					<li key={idx} className="avatar-select__item" onClick={() => onChangeItem(item)}>
+						<img src={item.iconUrl} alt="" className="avatar-select__lock-icon" />
+					</li>
+				))}
+			</ul>
 		</div>
 	);
 };
