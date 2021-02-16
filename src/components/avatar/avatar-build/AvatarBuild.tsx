@@ -2,19 +2,16 @@ import { FC } from 'react';
 import { AvatarData } from '../../../types/types';
 
 const AvatarBuild: FC<AvatarData> = (props) => {
-	console.log('avatar build props', props);
-	// console.log('this', body);
-	// console.log(eyes);
-	// console.log(glasses);
-	// console.log(hair);
-	// console.log(hat);
-	// console.log(mouth);
+	const { body, eyes, hat, hair } = props;
 	return (
 		<div className="avatar__body">
 			<h3>Body</h3>
-			{/* {body && <img src={body?.iconUrl} alt="" />} */}
-			{/* {eyes && <img src={eyes?.iconUrl} alt="" />} */}
-			{/* {hat && <img src={hat?.iconUrl} alt="" />} */}
+			<div className="avatar__build">
+				{body && <img src={body?.iconUrl} alt="" />}
+				{hair && <img src={hair?.iconUrl} alt="" />}
+				{hat && <img src={hat?.iconUrl} alt="" />}
+				{eyes && <img src={eyes?.iconUrl} alt="" />}
+			</div>
 		</div>
 	);
 };
