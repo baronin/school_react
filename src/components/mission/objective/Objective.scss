@@ -1,15 +1,15 @@
 .tasks-list {
-  display: flex;
+	display: flex;
 	flex-direction: row;
 	min-height: 46px;
-  padding: 10px 32px 5px 32px;
+	padding: 10px 32px 5px 32px;
 	list-style-type: decimal;
 }
 
 .tasks-item {
 	display: flex;
-  max-width: 33%;
-  width: 100%;
+	max-width: 33%;
+	width: 100%;
 	padding-right: 20px;
 }
 
@@ -22,7 +22,11 @@
 	line-height: 1.4;
 }
 
+.tasks-icon {
+	margin-top: 2px;
+}
+
 .task—current {
 	text-decoration: underline;
-	text-decoration-color: #3DBCA1;
+	text-decoration-color: #3dbca1;
 }
