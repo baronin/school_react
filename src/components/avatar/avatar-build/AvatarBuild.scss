@@ -1,0 +1,25 @@
+.avatar__build {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	margin-bottom: 50px;
+}
+
+.avatar__build-title {
+	margin-bottom: 15px;
+}
+
+.avatar__build-wrap {
+	position: relative;
+	width:  301px;
+	height: 301px;
+	align-self: center;
+	img	{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
+	}
+}
