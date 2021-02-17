@@ -1,0 +1,24 @@
+.avatar__item {
+	margin-bottom: 30px;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.avatar__item-title {
+	margin-bottom: 15px;
+}
+
+.avatar__item-button {
+	cursor: pointer;
+	background-color: #EFEFEF;
+	border: 5px solid transparent;
+}
+
+.avatar__item-button--active {
+	border-color: #3DBCA1;
+}
+
+.avatar__item-button:disabled {
+	opacity: 0.3;
+}

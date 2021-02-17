@@ -1,13 +1,16 @@
 import { FC } from 'react';
 import { AvatarItem, AvatarSlot } from '../../../types/types';
 
+import './AvatarItem.scss';
+
 type Props = {
 	avatarItem?: AvatarItem;
 	nameItem: AvatarSlot;
 	onActivate?: () => void;
+	isActive?: boolean;
 };
 
-const AvatarItemBlock: FC<Props> = ({ avatarItem, nameItem, onActivate }) => {
+const AvatarItemBlock: FC<Props> = ({ avatarItem, nameItem, onActivate, isActive }) => {
 	/**
 	 * { avatarItem, nameItem, onActivate }
 	 */
@@ -23,11 +26,13 @@ const AvatarItemBlock: FC<Props> = ({ avatarItem, nameItem, onActivate }) => {
 		special: '/avatar-builder-components/special-items/Special_basketball.svg',
 	};
 	const currentImage = avatarItem?.iconUrl || defaultIcon[nameItem];
+	const isDisabled = Boolean(avatarItem);
+	const buttonItemClass = `avatar__item-button ${isActive ? 'avatar__item-button--active' : ''}`;
 
 	return (
 		<div id={avatarItem?.id} className="avatar__item">
 			<h3 className="avatar__item-title">{nameItem}</h3>
-			<button type="button" className="avatar__item-button" onClick={onActivate}>
+			<button type="button" className={buttonItemClass} onClick={onActivate} disabled={!isDisabled}>
 				<img src={currentImage} alt={`avatar ${nameItem}`} />
 			</button>
 		</div>
