@@ -24,14 +24,18 @@ const Avatar: FC<AvatarBuilderProps> = ({ current, currentLevel, availableItems 
 			<button type="button" className="avatar__button-close" aria-label="Close" />
 			<div className="avatar__content">
 				<div className="avatar__content-item">
-					{leftSlots.map((slot) => (
-						<AvatarItemBlock
-							key={slot}
-							avatarItem={current[slot]}
-							nameItem={slot}
-							onActivate={() => setActiveSlot(slot)}
-						/>
-					))}
+					{leftSlots.map((slot) => {
+						const isActive = slot === activeSlot;
+						return (
+							<AvatarItemBlock
+								key={slot}
+								avatarItem={avatar[slot]}
+								nameItem={slot}
+								onActivate={() => setActiveSlot(slot)}
+								isActive={isActive}
+							/>
+						);
+					})}
 				</div>
 				<div className="avatar__content-center">
 					<AvatarBuild {...avatar} />
@@ -45,7 +49,7 @@ const Avatar: FC<AvatarBuilderProps> = ({ current, currentLevel, availableItems 
 					{rightSlots.map((slot) => (
 						<AvatarItemBlock
 							key={slot}
-							avatarItem={current[slot]}
+							avatarItem={avatar[slot]}
 							nameItem={slot}
 							onActivate={() => setActiveSlot(slot)}
 						/>
