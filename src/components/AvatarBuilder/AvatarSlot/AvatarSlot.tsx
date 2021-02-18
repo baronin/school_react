@@ -22,11 +22,11 @@ const defaultIcon: { [key in AvatarSlot]: string } = {
 };
 
 const AvatarSlotBlock: FC<AvatarItemProps> = ({ avatar, slotName, onSelect, isActive }: AvatarItemProps) => (
-	<div className="avatar__item">
-		<h3 className="avatar__item-title">{slotName}</h3>
+	<div className="avatar-slot">
+		<h3 className="avatar-slot__title">{slotName}</h3>
 		<button
 			type="button"
-			className={`avatar__item-button ${isActive ? 'avatar__item-button--active' : ''}`}
+			className={`avatar-slot__button ${isActive ? 'avatar-slot__button--active' : ''}`}
 			onClick={onSelect}
 			disabled={Boolean(!avatar)}
 		>
