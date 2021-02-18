@@ -36,15 +36,14 @@
 	-webkit-overflow-scrolling: touch;
 	&::-webkit-scrollbar {
 		height: 6px;
-		// width: 2px;               /* width of the entire scrollbar */
 	}
 	&::-webkit-scrollbar-track {
-		background: #BFBFBF;        /* color of the tracking area */
+		background: #BFBFBF;
 	}
 	&::-webkit-scrollbar-thumb {
-		background-color: #3A3A3A;    /* color of the scroll thumb */
-		border-radius: 20px;       /* roundness of the scroll thumb */
-		border: 3px solid #3A3A3A;  /* creates padding around scroll thumb */
+		background-color: #3A3A3A;
+		border-radius: 20px;
+		border: 3px solid #3A3A3A;
 	}
 }
 

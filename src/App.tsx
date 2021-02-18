@@ -7,7 +7,7 @@ import SeasonalRewards from './components/seasonal-rewards';
 import missionUserPathData from './mocked-data/mission-user-path-data';
 import seasonRewardsData from './mocked-data/season-rewards-data';
 import avatarBuilderData from './mocked-data/avatar-builder-data';
-import Avatar from './components/avatar';
+import AvatarBuilder from './components/AvatarBuilder';
 
 const App = (): ReactElement => {
 	const {
@@ -42,7 +42,7 @@ const App = (): ReactElement => {
 					</section>
 					<div className="avatar-component">
 						<button type="button">Toggle</button>
-						<Avatar current={current} availableItems={availableItems} currentLevel={currentLevel} />
+						<AvatarBuilder current={current} availableItems={availableItems} currentLevel={currentLevel} />
 					</div>
 				</div>
 			</main>

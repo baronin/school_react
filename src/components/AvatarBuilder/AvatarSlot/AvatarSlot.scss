@@ -10,9 +10,19 @@
 }
 
 .avatar__item-button {
+	display: inline-block;
+	width: 102px;
+	height: 102px;
+	padding: 12px;
+	border-radius: 50%;
 	cursor: pointer;
 	background-color: #EFEFEF;
 	border: 5px solid transparent;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
 }
 
 .avatar__item-button--active {

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { AvatarData } from '../../../types/types';
 
-import './AvatarBuild.scss';
+import './AvatarGenerate.scss';
 
 const AvatarBuild: FC<AvatarData> = (props) => {
 	const { body, hair, eyes, nose, mouth, hat, glasses, shirt, special } = props;
