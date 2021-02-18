@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import './RemainingTime.scss';
 import timerIcon from '../../../assets/images/general-icons/timer.png';
 
@@ -7,48 +7,30 @@ interface Props {
 }
 
 const RemainingTime: FC<Props> = ({ incomingDate }) => {
-	// work with data
-	const [timer, setTimer] = useState(0);
+	const [isLittleTime, setIsLittleTime] = useState(false);
 
-	const amountMmInDay = 86400000;
-	// const today = new Date().toDateString();
-	// console.log('🚀 ~ file: RemainingTime.tsx ~ line 15 ~ today', today);
+	const amountMsInDay = 86400000;
 	const todayParseMs = Date.now();
-	console.log('🚀 ~ file: RemainingTime.tsx ~ line 16 ~ todayParseMs', todayParseMs / 1000);
-	const parseResetDate = 1613599199 * 1000;
-	const getRemainingDays = (parseResetDate - todayParseMs) / (60 * 60 * 24 * 1000);
+	const parseResetDate = Date.parse(incomingDate?.toDateString() as string);
+	const getRemainingDays = `${Math.ceil((parseResetDate - todayParseMs) / (60 * 60 * 24 * 1000))} d`;
 
-	useEffect(() => {
-		const interval = setInterval(() => {
-			console.log('This will run every second!', incomingDate);
-			setTimer((seconds) => seconds + 1);
-		}, 1000);
-
-		return () => clearInterval(interval);
-	}, []);
-
-	const getTransformTimeToFormatHhMm = () => {
-		console.log(111111111111);
+	const getRemainingHours = (): string => {
 		const restTime = (parseResetDate - todayParseMs) / 1000;
-		console.log('🚀 ~ file: RemainingTime.tsx ~ line 31 ~ getTransformTimeToFormatHhMm ~ restTime', restTime, timer);
 		const hours = Math.floor(restTime / 3600);
 		const minutes = Math.ceil((restTime % 3600) / 60);
 
-		console.log('🚀 ~ file: RemainingTime.tsx ~ line 35 ~ getTransformTimeToFormatHhMm ~ minutes', hours, minutes);
-		return `${hours}:${minutes}`;
+		if (restTime <= 0 && !isLittleTime) setIsLittleTime(true);
+
+		return `${hours}:${minutes}m`;
 	};
 
-	console.log('RemaingTime', getRemainingDays);
-	// count down
 	return (
-		<div className="time-left">
+		<div className={`time-left ${isLittleTime ? 'time-left--time-is-over' : ''}`}>
 			<img className="time-left__icon" src={timerIcon} alt="timer" width="15px" height="15px" />
 			<span className="time-left__text">
-				{parseResetDate - todayParseMs > amountMmInDay
-					? getTransformTimeToFormatHhMm()
-					: getTransformTimeToFormatHhMm()}
-				d kvar
+				{parseResetDate - todayParseMs > amountMsInDay ? getRemainingDays : getRemainingHours()} kvar
 			</span>
+			<span className="time-left__info">Timeout</span>
 		</div>
 	);
 };
