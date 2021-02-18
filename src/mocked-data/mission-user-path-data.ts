@@ -4,7 +4,7 @@ const missionUserPathData: MissionUserPathData = {
 	pathId: 'uuid',
 	pathName: 'Mission path',
 	finalMissionNumber: 3,
-	upcomingPathResetDate: new Date('2021-02-01T00:00:00.000Z'),
+	upcomingPathResetDate: new Date('2021-02-18T12:00:00.000Z'),
 	previousMissions: [
 		{
 			completed: true,
