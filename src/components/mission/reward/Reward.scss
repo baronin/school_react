@@ -12,7 +12,7 @@
 	width: 33.33%;
 	// padding-right: 150px;
 	&:before {
-		content: '';
+		content: "";
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
@@ -33,7 +33,7 @@
 			width: calc(100% - 106px);
 		}
 		.reward-task-check {
-			left: 70px
+			left: 70px;
 		}
 	}
 }
@@ -78,7 +78,7 @@
 	position: absolute;
 	width: calc(100% + 4px);
 	height: calc(100% + 4px);
-	background-color: #3DBCA1;
+	background-color: #3dbca1;
 	border-radius: 50%;
 	z-index: -1;
 }
@@ -88,7 +88,7 @@
 	z-index: 1;
 }
 
-.reward-task-check, {
+.reward-task-check {
 	position: absolute;
 	top: 25%;
 	left: calc(50% + 9px);
@@ -113,4 +113,12 @@
 	font-size: 8px;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+#mission-number3 {
+	max-width: 55px;
+
+	&::before {
+		width: 100%;
+	}
 }
