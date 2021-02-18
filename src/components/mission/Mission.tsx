@@ -1,15 +1,9 @@
 import React, { FC, useState } from 'react';
-
-// scss
-import './Mission.scss';
-
-// components
 import RemainingTime from './remaining-time';
 import Reward from './reward';
 import Objective from './objective';
-
-// types
-import { MissionUserPathData, ObjectiveData } from '../../types/types';
+import { MissionUserPathData, ObjectiveData } from './types';
+import './Mission.scss';
 
 type Props = {
 	onObjectivePress?: (objective: ObjectiveData, index: number) => void;

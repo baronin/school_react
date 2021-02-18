@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import './AvatarSelect.scss';
 // import lockIcon from '../../../assets/images/general-icons/padlock.png';
-import { AvatarItem } from '../../../types/types';
+import { AvatarItem } from '../types';
 
 type Props = {
 	availableItems?: AvatarItem[];

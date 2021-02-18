@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { AvatarData } from '../../../types/types';
+import { AvatarData } from '../types';
 
 import './AvatarGenerate.scss';
 

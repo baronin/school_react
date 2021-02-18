@@ -1,4 +1,4 @@
-import { AvatarRendererProps } from '../types/types';
+import { AvatarRendererProps } from '../components/AvatarBuilder/types';
 
 const avatarRerenderData: AvatarRendererProps = {
 	avatar: {

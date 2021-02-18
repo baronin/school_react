@@ -1,4 +1,4 @@
-import { AvatarBuilderProps } from '../types/types';
+import { AvatarBuilderProps } from '../components/AvatarBuilder/types';
 
 const avatarBuilderData: AvatarBuilderProps = {
 	current: {

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { AvatarItem, AvatarSlot } from '../../../types/types';
+import { AvatarItem, AvatarSlot } from '../types';
 import './AvatarSlot.scss';
 
 type AvatarItemProps = {

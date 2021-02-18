@@ -1,4 +1,4 @@
-import { MissionUserPathData } from '../types/types';
+import { MissionUserPathData } from '../components/mission/types';
 
 const missionUserPathData: MissionUserPathData = {
 	pathId: 'uuid',

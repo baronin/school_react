@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useState } from 'react';
-import { AvatarBuilderProps, AvatarItem, AvatarSlot } from '../../types/types';
+import { AvatarBuilderProps, AvatarItem, AvatarSlot } from './types';
 import AvatarSlotBlock from './AvatarSlot';
 import AvatarSelect from './AvatarSelect';
 import AvatarBuild from './AvatarGenerate';

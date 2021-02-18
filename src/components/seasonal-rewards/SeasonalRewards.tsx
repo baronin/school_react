@@ -9,7 +9,7 @@ import iconLock from '../../assets/images/general-icons/lock.svg';
 import './SeasonalRewards.scss';
 
 // types
-import { SeasonalRewardsProps } from '../../types/types';
+import { SeasonalRewardsProps } from './types';
 
 const SeasonalRewards: FC<SeasonalRewardsProps> = ({ currentLevel, rewards }) => {
 	const [isScrolling, setIsScrolling] = useState(false);
