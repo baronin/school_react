@@ -1,7 +1,8 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import Mission from './components/mission';
 import Header from './components/header';
 import SeasonalRewards from './components/seasonal-rewards';
+import sprites from './assets/images/sprites/global.svg';
 
 // mocked data
 import missionUserPathData from './mocked-data/mission-user-path-data';
@@ -10,6 +11,7 @@ import avatarBuilderData from './mocked-data/avatar-builder-data';
 import AvatarBuilder from './components/AvatarBuilder';
 
 const App = (): ReactElement => {
+	const [isShowAvatarBuilder, setIsShowAvatarBuilder] = useState(false);
 	const {
 		pathId,
 		pathName,
@@ -20,7 +22,6 @@ const App = (): ReactElement => {
 		upcomingMissions,
 	} = missionUserPathData;
 	const { currentLevel, rewards } = seasonRewardsData;
-
 	const { current, availableItems } = avatarBuilderData;
 
 	return (
@@ -41,8 +42,21 @@ const App = (): ReactElement => {
 						<SeasonalRewards currentLevel={currentLevel} rewards={rewards} />
 					</section>
 					<div className="avatar-component">
-						<button type="button">Toggle</button>
-						<AvatarBuilder current={current} availableItems={availableItems} currentLevel={currentLevel} />
+						<button
+							className="avatar-component__btn-toggle"
+							type="button"
+							onClick={() => setIsShowAvatarBuilder(!isShowAvatarBuilder)}
+						>
+							Toggle
+							<svg className="avatar-component__btn-toggle__icon">
+								<use href={`${sprites}#close`} />
+							</svg>
+						</button>
+						{isShowAvatarBuilder ? (
+							<AvatarBuilder current={current} availableItems={availableItems} currentLevel={currentLevel} />
+						) : (
+							''
+						)}
 					</div>
 				</div>
 			</main>
