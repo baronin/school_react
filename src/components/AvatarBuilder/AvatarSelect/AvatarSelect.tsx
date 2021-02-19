@@ -7,27 +7,40 @@ type Props = {
 	availableItems?: AvatarItem[];
 	currentLevel: number;
 	onChangeItem: (item: AvatarItem) => void;
-	isActiveSelect?: string;
-	onChangeSelectId?: (uuid: string) => void;
+	isActiveSelect?: AvatarItem;
 };
 
-const AvatarSelect: FC<Props> = ({ availableItems, currentLevel, onChangeItem, isActiveSelect, onChangeSelectId }) => {
-	console.log('currentLevel', currentLevel);
-	console.log('isActive', isActiveSelect);
+const AvatarSelect: FC<Props> = ({ availableItems, currentLevel, onChangeItem, isActiveSelect }) => {
 	return (
 		<div className="avatar-select">
-			<p className="avatar-select__title">Välj:</p>
+			<h4 className="avatar-select__title">Välj:</h4>
 			<ul className="avatar-select__list">
 				{availableItems?.map((item, idx) => {
-					console.log('onChangeCurrentItem(item)', onChangeSelectId);
-					console.log('item', item.id);
 					return (
-						<li key={idx} className="avatar-select__item" onClick={() => onChangeItem(item)}>
-							<img
-								src={item?.requiredLevel <= currentLevel ? item.iconUrl : lockIcon}
-								alt=""
-								className="avatar-select__lock-icon"
-							/>
+						<li
+							key={idx}
+							className={`avatar-select__item ${isActiveSelect?.id === item.id ? 'avatar-select__item--active' : ''}`}
+							onClick={() => onChangeItem(item)}
+							aria-disabled={item?.requiredLevel >= currentLevel}
+							tabIndex={1}
+						>
+							{item.iconUrl && (
+								<img src={item.iconUrl} alt="things" className="avatar-select__icon" width="58px" height="58px" />
+							)}
+							{item?.requiredLevel >= currentLevel && (
+								<figure className="avatar-select__lock-figure">
+									<picture>
+										<img
+											src={lockIcon}
+											alt="lock things"
+											className="avatar-select__lock-icon"
+											width="58px"
+											height="58px"
+										/>
+									</picture>
+									<figcaption className="avatar-select__lock-figcaption">lvl {item?.requiredLevel}</figcaption>
+								</figure>
+							)}
 						</li>
 					);
 				})}
