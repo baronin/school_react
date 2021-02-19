@@ -20,17 +20,17 @@
 	margin: 0;
 	border-radius: 50%;
 	cursor: pointer;
-	background-color: #EFEFEF;
+	background-color: #efefef;
 	border: 5px solid transparent;
+
 	&--active {
-		border-color: #3DBCA1;
+		border-color: #3dbca1;
 	}
-	&:disabled {
-		cursor: auto;
-		img {
-			opacity: 0.3;
-		}
+
+	&--opacity img {
+		opacity: 0.3;
 	}
+
 	img {
 		width: 100%;
 		height: auto;
