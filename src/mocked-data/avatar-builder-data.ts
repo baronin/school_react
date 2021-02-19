@@ -198,7 +198,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 				iconUrl: '/avatar-icons/Eyes brown.png',
 				components: [
 					{
-						url: '/avatar-builder-components/Eyes/Eyes blue.svg',
+						url: '/avatar-builder-components/Eyes/Eyes brown.svg',
 						layer: 4,
 					},
 				],
@@ -209,7 +209,18 @@ const avatarBuilderData: AvatarBuilderProps = {
 				iconUrl: '/avatar-icons/Eyes green.png',
 				components: [
 					{
-						url: '/avatar-builder-components/Eyes/Eyes blue.svg',
+						url: '/avatar-builder-components/Eyes/Eyes green.svg',
+						layer: 4,
+					},
+				],
+			},
+			{
+				id: 'uuid67',
+				requiredLevel: 1,
+				iconUrl: '/avatar-icons/Eyes makeup.png',
+				components: [
+					{
+						url: '/avatar-builder-components/Eyes/Eyes makeup.svg',
 						layer: 4,
 					},
 				],
