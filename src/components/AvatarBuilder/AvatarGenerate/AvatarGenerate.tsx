@@ -1,54 +1,26 @@
-import { FC } from 'react';
-import { AvatarData } from '../types';
-
+import { FC, ReactNode } from 'react';
+import { AvatarComponent, AvatarItem } from '../types';
 import './AvatarGenerate.scss';
 
-const AvatarBuild: FC<AvatarData> = (props) => {
-	const { body, hair, eyes, nose, mouth, hat, glasses, shirt, special } = props;
+type Props = {
+	avatarThings: (AvatarItem | undefined)[];
+};
+
+const AvatarGenerate: FC<Props> = ({ avatarThings }) => {
+	const buildAvatar = avatarThings.map((item: AvatarItem | undefined) => {
+		return item?.components.map(
+			(component: AvatarComponent, index: number): ReactNode => {
+				return <img key={index} src={component.url} alt="things" style={{ zIndex: component.layer }} />;
+			},
+		);
+	});
 
 	return (
-		<div className="avatar__build">
-			<h3 className="avatar__build-title">Body</h3>
-			<div className="avatar__build-wrap">
-				{body &&
-					body?.components.map((item, idx) => (
-						<img src={item.url} key={idx} alt="test" style={{ zIndex: item.layer }} />
-					))}
-				{hair &&
-					hair?.components.map((item, idx) => (
-						<img src={item.url} key={idx} alt="test" style={{ zIndex: item.layer }} />
-					))}
-				{eyes &&
-					eyes?.components.map((item, idx) => (
-						<img src={item.url} key={idx} alt="test" style={{ zIndex: item.layer }} />
-					))}
-				{nose &&
-					nose?.components.map((item, idx) => (
-						<img src={item.url} key={idx} alt="test" style={{ zIndex: item.layer }} />
-					))}
-				{mouth &&
-					mouth?.components.map((item, idx) => (
-						<img src={item.url} key={idx} alt="test" style={{ zIndex: item.layer }} />
-					))}
-				{hat &&
-					hat?.components.map((item, idx) => (
-						<img src={item.url} key={idx} alt="test" style={{ zIndex: item.layer }} />
-					))}
-				{glasses &&
-					glasses?.components.map((item, idx) => (
-						<img src={item.url} key={idx} alt="test" style={{ zIndex: item.layer }} />
-					))}
-				{shirt &&
-					shirt?.components.map((item, idx) => (
-						<img src={item.url} key={idx} alt="test" style={{ zIndex: item.layer }} />
-					))}
-				{special &&
-					special?.components.map((item, idx) => (
-						<img src={item.url} key={idx} alt="test" style={{ zIndex: item.layer }} />
-					))}
-			</div>
+		<div className="avatar-generate">
+			<h3 className="avatar-generate__title">Body</h3>
+			<div className="avatar-generate__wrap">{buildAvatar}</div>
 		</div>
 	);
 };
 
-export default AvatarBuild;
+export default AvatarGenerate;

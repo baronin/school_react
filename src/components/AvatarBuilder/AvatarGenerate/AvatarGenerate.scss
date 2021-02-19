@@ -1,4 +1,4 @@
-.avatar__build {
+.avatar-generate {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -6,15 +6,19 @@
 	margin-bottom: 50px;
 }
 
-.avatar__build-title {
+.avatar-generate__title {
 	margin-bottom: 15px;
+	font-size: 18px;
 }
 
-.avatar__build-wrap {
+.avatar-generate__wrap {
 	position: relative;
 	width:  301px;
 	height: 301px;
 	align-self: center;
+	border-radius: 50%;
+	box-shadow: 0 0 25px 0 rgba(0,0,0,0.45);
+	overflow: hidden;
 	img	{
 		position: absolute;
 		top: 0;
