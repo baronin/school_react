@@ -29,7 +29,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 			],
 		},
 		eyes: {
-			id: 'uuid',
+			id: 'uuid5',
 			requiredLevel: 1,
 			iconUrl: '/avatar-icons/Eyes brown.png',
 			components: [
@@ -182,7 +182,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		],
 		eyes: [
 			{
-				id: 'uuid',
+				id: 'uuid4',
 				requiredLevel: 1,
 				iconUrl: '/avatar-icons/Eyes blue.png',
 				components: [
@@ -193,7 +193,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 				],
 			},
 			{
-				id: 'uuid',
+				id: 'uuid5',
 				requiredLevel: 1,
 				iconUrl: '/avatar-icons/Eyes brown.png',
 				components: [
@@ -204,7 +204,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 				],
 			},
 			{
-				id: 'uuid',
+				id: 'uuid6',
 				requiredLevel: 1,
 				iconUrl: '/avatar-icons/Eyes green.png',
 				components: [
