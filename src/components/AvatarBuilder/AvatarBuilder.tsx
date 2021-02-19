@@ -15,7 +15,21 @@ const AvatarBuilder: FC<AvatarBuilderProps> = ({ current, currentLevel, availabl
 
 	const handleChangeAvatar = useCallback(
 		(item: AvatarItem) => {
-			const { ...newAvatar } = avatarBuilderList;
+			let { ...newAvatar } = avatarBuilderList;
+
+			if (/hair|hat/.test(activeSlot)) {
+				switch (activeSlot) {
+					case 'hair':
+						newAvatar = { ...newAvatar, hat: undefined };
+						break;
+					case 'hat':
+						newAvatar = { ...newAvatar, hair: undefined };
+						break;
+					default:
+						break;
+				}
+			}
+
 			newAvatar[activeSlot] = item;
 			setAvatarBuilderList(newAvatar);
 		},
