@@ -10,7 +10,7 @@ const AvatarGenerate: FC<Props> = ({ avatarThings }) => {
 	const buildAvatar = avatarThings.map((item: AvatarItem | undefined) => {
 		return item?.components.map(
 			(component: AvatarComponent, index: number): ReactNode => {
-				return <img key={index} src={component.url} alt="things" style={{ zIndex: component.layer }} />;
+				return <img key={index} src={component.url} alt="things" style={{ zIndex: component.layer + 10 }} />;
 			},
 		);
 	});
