@@ -2,44 +2,43 @@ import React, { FC, useCallback, useState } from 'react';
 import { AvatarBuilderProps, AvatarItem, AvatarSlot } from './types';
 import AvatarSlotBlock from './AvatarSlot';
 import AvatarSelect from './AvatarSelect';
-import AvatarBuild from './AvatarGenerate';
+import AvatarGenerate from './AvatarGenerate';
+import sprites from '../../assets/images/sprites/global.svg';
 import './AvatarBuilder.scss';
 
 const AvatarBuilder: FC<AvatarBuilderProps> = ({ current, currentLevel, availableItems }: AvatarBuilderProps) => {
-	const [avatar, setAvatar] = useState(current);
+	const [avatarBuilderList, setAvatarBuilderList] = useState(current);
 	const [activeSlot, setActiveSlot] = useState<AvatarSlot>('hair');
-	const [activeSelectId, setActiveSelectId] = useState(availableItems.hair[0].id);
 
 	const leftSlots: AvatarSlot[] = ['hair', 'eyes', 'nose', 'mouth'];
 	const rightSlots: AvatarSlot[] = ['hat', 'glasses', 'shirt', 'special'];
 
 	const handleChangeAvatar = useCallback(
 		(item: AvatarItem) => {
-			const { ...newAvatar } = avatar;
+			const { ...newAvatar } = avatarBuilderList;
 			newAvatar[activeSlot] = item;
-			setAvatar(newAvatar);
+			setAvatarBuilderList(newAvatar);
 		},
-		[activeSlot, avatar],
+		[activeSlot, avatarBuilderList],
 	);
-	const handlerSelectThing = (selectItem: any) => {
-		if (selectItem && selectItem.requiredLevel > currentLevel) return;
-		setActiveSelectId(selectItem.id);
-		// selectCallBack(selectItem.id);
-	};
 
 	return (
-		<div className="avatar">
-			<h2 className="avatar__title">Bygg din avatar!</h2>
-			<button type="button" className="avatar__button-close" aria-label="Close" />
-			<div className="avatar__content">
-				<div className="avatar__content-items">
+		<div className="avatar-builder">
+			<h2 className="avatar-builder__title">Bygg din avatar!</h2>
+			<button type="button" className="avatar-builder__button-close" aria-label="Close">
+				<svg className="avatar-builder__icon-close" width="16px" height="16px">
+					<use href={`${sprites}#close`} />
+				</svg>
+			</button>
+			<div className="avatar-builder__content">
+				<div className="avatar-builder__content-items">
 					{leftSlots.map((slot) => {
 						const isActive = slot === activeSlot;
-						console.log('avatar[slot]', avatar[slot]);
+
 						return (
 							<AvatarSlotBlock
 								key={slot}
-								avatar={avatar[slot]}
+								avatar={avatarBuilderList[slot]}
 								slotName={slot}
 								onSelect={() => setActiveSlot(slot)}
 								isActive={isActive}
@@ -47,24 +46,23 @@ const AvatarBuilder: FC<AvatarBuilderProps> = ({ current, currentLevel, availabl
 						);
 					})}
 				</div>
-				<div className="avatar__content-center">
-					<AvatarBuild {...avatar} />
+				<div className="avatar-builder__content-center">
+					<AvatarGenerate avatarThings={Object.values(avatarBuilderList).filter((item) => !!item)} />
 					<AvatarSelect
 						availableItems={availableItems[activeSlot]}
 						currentLevel={currentLevel}
 						onChangeItem={handleChangeAvatar}
-						isActiveSelect={activeSelectId}
-						onChangeSelectId={handlerSelectThing}
+						isActiveSelect={avatarBuilderList[activeSlot]}
 					/>
 				</div>
-				<div className="avatar__content-items">
+				<div className="avatar-builder__content-items">
 					{rightSlots.map((slot) => {
 						const isActive = slot === activeSlot;
 
 						return (
 							<AvatarSlotBlock
 								key={slot}
-								avatar={avatar[slot]}
+								avatar={avatarBuilderList[slot]}
 								slotName={slot}
 								onSelect={() => setActiveSlot(slot)}
 								isActive={isActive}

@@ -2,7 +2,6 @@ import React, { ReactElement, useState } from 'react';
 import Mission from './components/mission';
 import Header from './components/header';
 import SeasonalRewards from './components/seasonal-rewards';
-import sprites from './assets/images/sprites/global.svg';
 
 // mocked data
 import missionUserPathData from './mocked-data/mission-user-path-data';
@@ -11,7 +10,7 @@ import avatarBuilderData from './mocked-data/avatar-builder-data';
 import AvatarBuilder from './components/AvatarBuilder';
 
 const App = (): ReactElement => {
-	const [isShowAvatarBuilder, setIsShowAvatarBuilder] = useState(false);
+	const [isShowAvatarBuilder, setIsShowAvatarBuilder] = useState(true);
 	const {
 		pathId,
 		pathName,
@@ -48,9 +47,6 @@ const App = (): ReactElement => {
 							onClick={() => setIsShowAvatarBuilder(!isShowAvatarBuilder)}
 						>
 							Toggle
-							<svg className="avatar-component__btn-toggle__icon">
-								<use href={`${sprites}#close`} />
-							</svg>
 						</button>
 						{isShowAvatarBuilder ? (
 							<AvatarBuilder current={current} availableItems={availableItems} currentLevel={currentLevel} />
