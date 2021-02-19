@@ -40,7 +40,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 			],
 		},
 		nose: {
-			id: 'uuid',
+			id: 'uuid9',
 			requiredLevel: 1,
 			iconUrl: '/avatar-icons/nose_wide.png',
 			components: [
@@ -51,7 +51,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 			],
 		},
 		mouth: {
-			id: 'uuid',
+			id: 'uuid12',
 			requiredLevel: 1,
 			iconUrl: '/avatar-icons/mouth_smile.png',
 			components: [
@@ -63,7 +63,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		},
 		hat: undefined,
 		glasses: {
-			id: 'uuid',
+			id: 'uuid16',
 			requiredLevel: 1,
 			iconUrl: '/avatar-icons/Glasses_monocle.png',
 			components: [
@@ -74,9 +74,9 @@ const avatarBuilderData: AvatarBuilderProps = {
 			],
 		},
 		shirt: {
-			id: 'uuid',
+			id: 'uuid19',
 			requiredLevel: 1,
-			iconUrl: '/avatar-icons/Shirt_suit.png',
+			iconUrl: '/avatar-icons/Shirt_hoodie.png',
 			components: [
 				{
 					url: '/avatar-builder-components/shirt/Shirt_hoodie_back.svg',
@@ -89,12 +89,12 @@ const avatarBuilderData: AvatarBuilderProps = {
 			],
 		},
 		special: {
-			id: 'uuid',
+			id: 'uuid22',
 			requiredLevel: 1,
-			iconUrl: '/avatar-icons/Special_controller.png',
+			iconUrl: '/avatar-icons/Special_basketball.png',
 			components: [
 				{
-					url: '/avatar-builder-components/special items/Special_controller.svg',
+					url: '/avatar-builder-components/special items/Special_basketball.svg',
 					layer: 7,
 				},
 			],
@@ -217,7 +217,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		],
 		nose: [
 			{
-				id: 'uuid',
+				id: 'uuid7',
 				requiredLevel: 1,
 				iconUrl: '/avatar-icons/nose_long.png',
 				components: [
@@ -228,7 +228,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 				],
 			},
 			{
-				id: 'uuid',
+				id: 'uuid8',
 				requiredLevel: 1,
 				iconUrl: '/avatar-icons/nose_tiny.png',
 				components: [
@@ -239,7 +239,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 				],
 			},
 			{
-				id: 'uuid',
+				id: 'uuid9',
 				requiredLevel: 1,
 				iconUrl: '/avatar-icons/nose_wide.png',
 				components: [
@@ -252,7 +252,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 		],
 		mouth: [
 			{
-				id: 'uuid',
+				id: 'uuid10',
 				requiredLevel: 1,
 				iconUrl: '/avatar-icons/mouth_fun.png',
 				components: [
@@ -263,7 +263,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 				],
 			},
 			{
-				id: 'uuid',
+				id: 'uuid11',
 				requiredLevel: 1,
 				iconUrl: '/avatar-icons/mouth_laugh.png',
 				components: [
@@ -274,7 +274,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 				],
 			},
 			{
-				id: 'uuid',
+				id: 'uuid12',
 				requiredLevel: 1,
 				iconUrl: '/avatar-icons/mouth_smile.png',
 				components: [
@@ -287,35 +287,35 @@ const avatarBuilderData: AvatarBuilderProps = {
 		],
 		hat: [
 			{
-				id: 'uuid',
+				id: 'uuid13',
 				requiredLevel: 1,
 				iconUrl: '/avatar-icons/Hat_jazz.png',
 				components: [
 					{
-						url: 'path/to/file/in/avatar-builder-components/hat_back',
+						url: '/avatar-builder-components/Hats/Hat_jazz.svg',
+						layer: 5,
+					},
+				],
+			},
+			{
+				id: 'uuid14',
+				requiredLevel: 1,
+				iconUrl: '/avatar-icons/Hat_pirate.png',
+				components: [
+					{
+						url: '/avatar-builder-components/Hats/Hat_pirate_back.svg',
 						layer: 1,
 					},
 					{
-						url: 'path/to/file/in/avatar-builder-components/hat_front',
+						url: '/avatar-builder-components/Hats/Hat_pirate_front.svg',
 						layer: 5,
 					},
 				],
 			},
 			{
-				id: 'uuid',
-				requiredLevel: 1,
-				iconUrl: '/avatar-icons/Hat_jazz.png',
-				components: [
-					{
-						url: 'path/to/file/in/avatar-builder-components/hat',
-						layer: 5,
-					},
-				],
-			},
-			{
-				id: 'uuid',
+				id: 'uuid15',
 				requiredLevel: 4,
-				iconUrl: 'path/to/hat/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/Hat_snapBack.png',
 				components: [
 					{
 						url: 'path/to/file/in/avatar-builder-components/hat_back',
@@ -330,20 +330,9 @@ const avatarBuilderData: AvatarBuilderProps = {
 		],
 		glasses: [
 			{
-				id: 'uuid',
+				id: 'uuid16',
 				requiredLevel: 1,
-				iconUrl: 'path/to/glasses/file/in/avatar-icons',
-				components: [
-					{
-						url: '/avatar-builder-components/Glasses/Glasses_cool.svg',
-						layer: 6,
-					},
-				],
-			},
-			{
-				id: 'uuid',
-				requiredLevel: 3,
-				iconUrl: 'path/to/glasses/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/Glasses_monocle.png',
 				components: [
 					{
 						url: '/avatar-builder-components/Glasses/Glasses_monocle.svg',
@@ -352,12 +341,23 @@ const avatarBuilderData: AvatarBuilderProps = {
 				],
 			},
 			{
-				id: 'uuid',
-				requiredLevel: 5,
-				iconUrl: 'path/to/glasses/file/in/avatar-icons',
+				id: 'uuid17',
+				requiredLevel: 3,
+				iconUrl: '/avatar-icons/Glasses_purple.png',
 				components: [
 					{
-						url: '/avatar-builder-components/Glasses/Glasses_sunburst.svg',
+						url: '/avatar-builder-components/Glasses/Glasses_purple.svg',
+						layer: 6,
+					},
+				],
+			},
+			{
+				id: 'uuid18',
+				requiredLevel: 5,
+				iconUrl: '/avatar-icons/Glasses_round.png',
+				components: [
+					{
+						url: '/avatar-builder-components/Glasses/Glasses_round.svg',
 						layer: 6,
 					},
 				],
@@ -365,42 +365,38 @@ const avatarBuilderData: AvatarBuilderProps = {
 		],
 		shirt: [
 			{
-				id: 'uuid',
+				id: 'uuid19',
 				requiredLevel: 1,
-				iconUrl: 'path/to/shirt/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/Shirt_hoodie.png',
 				components: [
 					{
-						url: 'path/to/file/in/avatar-builder-components/shirt_back',
+						url: '/avatar-builder-components/shirt/Shirt_hoodie_back.svg',
 						layer: 2,
 					},
 					{
-						url: 'path/to/file/in/avatar-builder-components/shirt_front',
+						url: '/avatar-builder-components/shirt/Shirt_hoodie_front.svg',
 						layer: 4,
 					},
 				],
 			},
 			{
-				id: 'uuid',
+				id: 'uuid20',
 				requiredLevel: 1,
-				iconUrl: 'path/to/shirt/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/Shirt_leatherJacket.png',
 				components: [
 					{
-						url: 'path/to/file/in/avatar-builder-components/shirt',
+						url: '/avatar-builder-components/shirt/Shirt_leatherJacket.svg',
 						layer: 4,
 					},
 				],
 			},
 			{
-				id: 'uuid',
+				id: 'uuid21',
 				requiredLevel: 5,
-				iconUrl: 'path/to/shirt/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/Shirt_magic.png',
 				components: [
 					{
-						url: 'path/to/file/in/avatar-builder-components/shirt_back',
-						layer: 2,
-					},
-					{
-						url: 'path/to/file/in/avatar-builder-components/shirt_front',
+						url: '/avatar-builder-components/shirt/Shirt_magic.svg',
 						layer: 4,
 					},
 				],
@@ -408,34 +404,34 @@ const avatarBuilderData: AvatarBuilderProps = {
 		],
 		special: [
 			{
-				id: 'uuid',
+				id: 'uuid22',
 				requiredLevel: 2,
-				iconUrl: 'path/to/special/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/Special_basketball.png',
 				components: [
 					{
-						url: 'path/to/file/in/avatar-builder-components/special',
+						url: '/avatar-builder-components/shirt/Special_basketball.svg',
 						layer: 7,
 					},
 				],
 			},
 			{
-				id: 'uuid',
+				id: 'uuid23',
 				requiredLevel: 4,
-				iconUrl: 'path/to/special/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/Special_controller.png',
 				components: [
 					{
-						url: 'path/to/file/in/avatar-builder-components/special',
+						url: '/avatar-builder-components/shirt/Special_controller.svg',
 						layer: 7,
 					},
 				],
 			},
 			{
-				id: 'uuid',
+				id: 'uuid24',
 				requiredLevel: 6,
-				iconUrl: 'path/to/special/file/in/avatar-icons',
+				iconUrl: '/avatar-icons/Special_cowalla.png',
 				components: [
 					{
-						url: 'path/to/file/in/avatar-builder-components/special',
+						url: '/avatar-builder-components/shirt/Special_cowalla.svg',
 						layer: 7,
 					},
 				],

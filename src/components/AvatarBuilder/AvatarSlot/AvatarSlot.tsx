@@ -10,8 +10,8 @@ type AvatarItemProps = {
 };
 
 const defaultIcon: { [key in AvatarSlot]: string } = {
-	body: '/avatar-builder-components/Boy 1.svg',
-	hair: '/avatar-builder-components/BasicHair_01.svg',
+	body: '/avatar-builder-components/Body/Boy 1.svg',
+	hair: '/avatar-builder-components/hair/BasicHair_01.svg',
 	eyes: '/avatar-builder-components/Eyes/Eyes blue.svg',
 	nose: '/avatar-builder-components/nose/nose_long.svg',
 	mouth: '/avatar-builder-components/mouth/mouth_laugh.svg',
@@ -26,9 +26,10 @@ const AvatarSlotBlock: FC<AvatarItemProps> = ({ avatar, slotName, onSelect, isAc
 		<h3 className="avatar-slot__title">{slotName}</h3>
 		<button
 			type="button"
-			className={`avatar-slot__button ${isActive ? 'avatar-slot__button--active' : ''}`}
+			className={`avatar-slot__button ${isActive ? 'avatar-slot__button--active' : ''} ${
+				!avatar ? 'avatar-slot__button--opacity' : ''
+			}`}
 			onClick={onSelect}
-			disabled={Boolean(!avatar)}
 		>
 			<img src={avatar?.iconUrl ?? defaultIcon[slotName]} alt={`avatar ${slotName}`} width="100px" height="100px" />
 		</button>
