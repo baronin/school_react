@@ -4,9 +4,11 @@ import './AvatarGenerate.scss';
 
 type Props = {
 	avatarThings: (AvatarItem | undefined)[];
+	onSelect?: () => void;
+	isActive?: boolean;
 };
 
-const AvatarGenerate: FC<Props> = ({ avatarThings }) => {
+const AvatarGenerate: FC<Props> = ({ avatarThings, onSelect, isActive }) => {
 	const buildAvatar = avatarThings.map((item: AvatarItem | undefined) => {
 		return item?.components.map(
 			(component: AvatarComponent, index: number): ReactNode => {
@@ -16,9 +18,9 @@ const AvatarGenerate: FC<Props> = ({ avatarThings }) => {
 	});
 
 	return (
-		<div className="avatar-generate">
+		<div className="avatar-generate" onClick={onSelect}>
 			<h3 className="avatar-generate__title">Body</h3>
-			<div className="avatar-generate__wrap">{buildAvatar}</div>
+			<div className={`avatar-generate__wrap ${isActive ? 'avatar-generate__wrap--active' : ''}`}>{buildAvatar}</div>
 		</div>
 	);
 };
