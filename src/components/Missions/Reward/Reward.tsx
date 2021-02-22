@@ -23,7 +23,7 @@ const Reward: FC<Props> = ({ isActive, rewards, completed, missionNumber, onClic
 	const rewardItemClass = `reward-item${completed ? ' reward-item--active' : ''}`;
 	const checkIcon = completed ? checkCompleted : checkDefault;
 
-	// choose icon for mission
+	// choose icon for Missions
 	let missionIconsTask;
 	switch (missionNumber) {
 		case 1:
@@ -40,7 +40,7 @@ const Reward: FC<Props> = ({ isActive, rewards, completed, missionNumber, onClic
 			break;
 	}
 
-	// show currency mission
+	// show currency Missions
 	const currency = rewards.map((item, index) => (
 		<span key={`rewards-${index}`} className="reward-currency">
 			{item.amount} {item.currency.toUpperCase()}

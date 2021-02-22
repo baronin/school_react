@@ -1,4 +1,4 @@
-import { SeasonalRewardsProps } from '../components/seasonal-rewards/types';
+import { SeasonalRewardsProps } from '../components/SeasonalRewards/types';
 
 const seasonRewardsData: SeasonalRewardsProps = {
 	currentLevel: 3,

@@ -1,15 +1,15 @@
 import React, { FC, useState } from 'react';
-import RemainingTime from './remaining-time';
-import Reward from './reward';
-import Objective from './objective';
+import RemainingTime from './RemainingTime';
+import Reward from './Reward';
+import Objective from './Objective';
 import { MissionUserPathData, ObjectiveData } from './types';
-import './Mission.scss';
+import './Missions.scss';
 
 type Props = {
 	onObjectivePress?: (objective: ObjectiveData, index: number) => void;
 };
 
-const Mission: FC<MissionUserPathData & Props> = ({
+const Missions: FC<MissionUserPathData & Props> = ({
 	pathId,
 	pathName,
 	finalMissionNumber,
@@ -70,4 +70,4 @@ const Mission: FC<MissionUserPathData & Props> = ({
 	);
 };
 
-export default Mission;
+export default Missions;

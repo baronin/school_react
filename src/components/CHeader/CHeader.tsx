@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
-import './Header.scss';
+import './CHeader.scss';
 
-const Header = (): ReactElement => {
+const CHeader = (): ReactElement => {
 	return (
 		<header className="header">
 			<h1>beetroot</h1>
@@ -9,4 +9,4 @@ const Header = (): ReactElement => {
 	);
 };
 
-export default Header;
+export default CHeader;

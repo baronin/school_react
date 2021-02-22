@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Mission from './Mission';
+import Missions from './Missions';
 import data from '../../mocked-data/mission-user-path-data';
 
-storiesOf('Mission', module).add('Mission', () => <Mission {...data} />);
+storiesOf('Missions', module).add('Missions', () => <Missions {...data} />);
