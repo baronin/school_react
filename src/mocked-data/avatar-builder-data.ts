@@ -8,7 +8,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 			iconUrl: '/avatar-builder-components/body/Boy 1.svg',
 			components: [
 				{
-					url: '/avatar-builder-components/Body/Boy 2.svg',
+					url: '/avatar-builder-components/Body/Boy 1.svg',
 					layer: 3,
 				},
 			],
@@ -106,10 +106,10 @@ const avatarBuilderData: AvatarBuilderProps = {
 			{
 				id: 'uuid',
 				requiredLevel: 1,
-				iconUrl: '/avatar-icons/BasicHair_04.png',
+				iconUrl: '/avatar-builder-components/Body/Boy 1.svg',
 				components: [
 					{
-						url: 'path/to/file/in/avatar-builder-components/body',
+						url: '/avatar-builder-components/Body/Boy 1.svg',
 						layer: 3,
 					},
 				],
@@ -117,10 +117,10 @@ const avatarBuilderData: AvatarBuilderProps = {
 			{
 				id: 'uuid2',
 				requiredLevel: 1,
-				iconUrl: '/avatar-icons/BasicHair_01.png',
+				iconUrl: '/avatar-builder-components/Body/Boy 2.svg',
 				components: [
 					{
-						url: 'path/to/file/in/avatar-builder-components/body',
+						url: '/avatar-builder-components/Body/Boy 2.svg',
 						layer: 3,
 					},
 				],
@@ -128,10 +128,10 @@ const avatarBuilderData: AvatarBuilderProps = {
 			{
 				id: 'uuid3',
 				requiredLevel: 1,
-				iconUrl: 'path/to/body/file/in/avatar-icons',
+				iconUrl: '/avatar-builder-components/Body/Boy 3.svg',
 				components: [
 					{
-						url: 'path/to/file/in/avatar-builder-components/body',
+						url: '/avatar-builder-components/Body/Boy 3.svg',
 						layer: 3,
 					},
 				],

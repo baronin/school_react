@@ -61,7 +61,11 @@ const AvatarBuilder: FC<AvatarBuilderProps> = ({ current, currentLevel, availabl
 					})}
 				</div>
 				<div className="avatar-builder__content-center">
-					<AvatarGenerate avatarThings={Object.values(avatarBuilderList).filter((item) => !!item)} />
+					<AvatarGenerate
+						avatarThings={Object.values(avatarBuilderList).filter((item) => !!item)}
+						onSelect={() => setActiveSlot('body')}
+						isActive={activeSlot === 'body'}
+					/>
 					<AvatarSelect
 						availableItems={availableItems[activeSlot]}
 						currentLevel={currentLevel}
