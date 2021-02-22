@@ -420,7 +420,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 				iconUrl: '/avatar-icons/Special_basketball.png',
 				components: [
 					{
-						url: '/avatar-builder-components/shirt/Special_basketball.svg',
+						url: '/avatar-builder-components/special items/Special_basketball.svg',
 						layer: 7,
 					},
 				],
@@ -431,7 +431,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 				iconUrl: '/avatar-icons/Special_controller.png',
 				components: [
 					{
-						url: '/avatar-builder-components/shirt/Special_controller.svg',
+						url: '/avatar-builder-components/special items/Special_controller.svg',
 						layer: 7,
 					},
 				],
@@ -442,7 +442,7 @@ const avatarBuilderData: AvatarBuilderProps = {
 				iconUrl: '/avatar-icons/Special_cowalla.png',
 				components: [
 					{
-						url: '/avatar-builder-components/shirt/Special_cowalla.svg',
+						url: '/avatar-builder-components/special items/Special_cowalla.svg',
 						layer: 7,
 					},
 				],

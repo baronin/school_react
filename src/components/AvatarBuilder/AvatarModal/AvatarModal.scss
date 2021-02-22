@@ -1,0 +1,31 @@
+.avatar-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0, 0.3);
+	transition: 0.3s ease;
+	z-index: 100;
+}
+
+.avatar-modal__inner {
+	max-width: 300px;
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+	background-color: white;
+	
+	button {
+		background-color: #3DBCA1;
+	}
+}
+
+.avatar-modal__title {
+	margin-bottom: 20px;
+}
+

@@ -5,11 +5,12 @@ import AvatarSelect from './AvatarSelect';
 import AvatarGenerate from './AvatarGenerate';
 import sprites from '../../assets/images/sprites/global.svg';
 import './AvatarBuilder.scss';
+import AvatarModal from './AvatarModal';
 
 const AvatarBuilder: FC<AvatarBuilderProps> = ({ current, currentLevel, availableItems }: AvatarBuilderProps) => {
 	const [avatarBuilderList, setAvatarBuilderList] = useState(current);
 	const [activeSlot, setActiveSlot] = useState<AvatarSlot>('hair');
-
+	const [isOpenModal, setOpenModal] = useState(false);
 	const leftSlots: AvatarSlot[] = ['hair', 'eyes', 'nose', 'mouth'];
 	const rightSlots: AvatarSlot[] = ['hat', 'glasses', 'shirt', 'special'];
 
@@ -35,11 +36,15 @@ const AvatarBuilder: FC<AvatarBuilderProps> = ({ current, currentLevel, availabl
 		},
 		[activeSlot, avatarBuilderList],
 	);
-
 	return (
 		<div className="avatar-builder">
 			<h2 className="avatar-builder__title">Bygg din avatar!</h2>
-			<button type="button" className="avatar-builder__button-close" aria-label="Close">
+			<button
+				type="button"
+				className="avatar-builder__button-close"
+				aria-label="Close"
+				onClick={() => setOpenModal(true)}
+			>
 				<svg className="avatar-builder__icon-close" width="16px" height="16px">
 					<use href={`${sprites}#close`} />
 				</svg>
@@ -89,6 +94,7 @@ const AvatarBuilder: FC<AvatarBuilderProps> = ({ current, currentLevel, availabl
 					})}
 				</div>
 			</div>
+			{isOpenModal && <AvatarModal />}
 		</div>
 	);
 };
