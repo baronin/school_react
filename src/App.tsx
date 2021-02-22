@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useCallback } from 'react';
+import React, { ReactElement, useState } from 'react';
 import Mission from './components/mission';
 import Header from './components/header';
 import SeasonalRewards from './components/seasonal-rewards';
@@ -23,9 +23,9 @@ const App = (): ReactElement => {
 	const { currentLevel, rewards } = seasonRewardsData;
 	const { current, availableItems } = avatarBuilderData;
 
-	const closeModalWindow = useCallback(() => {
+	const closeModalWindow = () => {
 		setIsShowAvatarBuilder(false);
-	}, [isShowAvatarBuilder]);
+	};
 
 	return (
 		<div className="app">

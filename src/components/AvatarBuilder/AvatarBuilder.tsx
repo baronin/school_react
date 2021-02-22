@@ -19,14 +19,14 @@ const AvatarBuilder: FC<Props & AvatarBuilderProps> = ({ current, currentLevel, 
 	const leftSlots: AvatarSlot[] = ['hair', 'eyes', 'nose', 'mouth'];
 	const rightSlots: AvatarSlot[] = ['hat', 'glasses', 'shirt', 'special'];
 
-	const resetChangeAvatar = useCallback(() => {
+	const resetChangeAvatar = () => {
 		setAvatarBuilderList(currentDefault);
 		closeModalWindow();
-	}, [currentDefault]);
+	};
 
-	const saveChangeAvatar = useCallback(() => {
+	const saveChangeAvatar = () => {
 		closeModalWindow();
-	}, [currentDefault]);
+	};
 
 	const handleChangeAvatar = useCallback(
 		(item: AvatarItem) => {
