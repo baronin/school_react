@@ -19,13 +19,40 @@
 	padding: 20px;
 	text-align: center;
 	background-color: white;
-	
-	button {
-		background-color: #3DBCA1;
-	}
+	border-radius: 5px;
 }
 
 .avatar-modal__title {
 	margin-bottom: 20px;
 }
 
+.avatar-modal__button {
+	position: relative;
+	max-width: 70px;
+	width: 100%;
+	padding: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	font-weight: bold;
+	color: white;
+	background-size: 300% 100%;
+	background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+	box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+	border: none;
+	border-radius: 15px;
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	cursor: pointer;
+	&:focus {
+		outline: none;
+	}
+	&:hover {
+		background-position: 100% 0;
+		moz-transition: all .4s ease-in-out;
+		-o-transition: all .4s ease-in-out;
+		-webkit-transition: all .4s ease-in-out;
+		transition: all .4s ease-in-out;
+	}
+}
