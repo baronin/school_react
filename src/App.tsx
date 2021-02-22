@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement, useState, useCallback } from 'react';
 import Mission from './components/mission';
 import Header from './components/header';
 import SeasonalRewards from './components/seasonal-rewards';
@@ -22,6 +22,10 @@ const App = (): ReactElement => {
 	} = missionUserPathData;
 	const { currentLevel, rewards } = seasonRewardsData;
 	const { current, availableItems } = avatarBuilderData;
+
+	const closeModalWindow = useCallback(() => {
+		setIsShowAvatarBuilder(false);
+	}, [isShowAvatarBuilder]);
 
 	return (
 		<div className="app">
@@ -49,7 +53,12 @@ const App = (): ReactElement => {
 							Toggle
 						</button>
 						{isShowAvatarBuilder ? (
-							<AvatarBuilder current={current} availableItems={availableItems} currentLevel={currentLevel} />
+							<AvatarBuilder
+								current={current}
+								availableItems={availableItems}
+								currentLevel={currentLevel}
+								closeModalWindow={closeModalWindow}
+							/>
 						) : (
 							''
 						)}

@@ -7,12 +7,26 @@ import sprites from '../../assets/images/sprites/global.svg';
 import './AvatarBuilder.scss';
 import AvatarModal from './AvatarModal';
 
-const AvatarBuilder: FC<AvatarBuilderProps> = ({ current, currentLevel, availableItems }: AvatarBuilderProps) => {
+type Props = {
+	closeModalWindow: () => void;
+};
+
+const AvatarBuilder: FC<Props & AvatarBuilderProps> = ({ current, currentLevel, availableItems, closeModalWindow }) => {
 	const [avatarBuilderList, setAvatarBuilderList] = useState(current);
+	const [currentDefault] = useState(current);
 	const [activeSlot, setActiveSlot] = useState<AvatarSlot>('hair');
 	const [isOpenModal, setOpenModal] = useState(false);
 	const leftSlots: AvatarSlot[] = ['hair', 'eyes', 'nose', 'mouth'];
 	const rightSlots: AvatarSlot[] = ['hat', 'glasses', 'shirt', 'special'];
+
+	const resetChangeAvatar = useCallback(() => {
+		setAvatarBuilderList(currentDefault);
+		closeModalWindow();
+	}, [currentDefault]);
+
+	const saveChangeAvatar = useCallback(() => {
+		closeModalWindow();
+	}, [currentDefault]);
 
 	const handleChangeAvatar = useCallback(
 		(item: AvatarItem) => {
@@ -36,6 +50,7 @@ const AvatarBuilder: FC<AvatarBuilderProps> = ({ current, currentLevel, availabl
 		},
 		[activeSlot, avatarBuilderList],
 	);
+
 	return (
 		<div className="avatar-builder">
 			<h2 className="avatar-builder__title">Bygg din avatar!</h2>
@@ -94,7 +109,7 @@ const AvatarBuilder: FC<AvatarBuilderProps> = ({ current, currentLevel, availabl
 					})}
 				</div>
 			</div>
-			{isOpenModal && <AvatarModal />}
+			{isOpenModal && <AvatarModal resetChangeAvatar={resetChangeAvatar} saveChangeAvatar={saveChangeAvatar} />}
 		</div>
 	);
 };
