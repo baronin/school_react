@@ -45,7 +45,9 @@ const AvatarBuilder: FC<Props & AvatarBuilderProps> = ({ current, currentLevel, 
 				}
 			}
 
-			newAvatar[activeSlot] = item;
+			if (newAvatar[activeSlot]?.id === item.id) newAvatar[activeSlot] = undefined;
+			else newAvatar[activeSlot] = item;
+
 			setAvatarBuilderList(newAvatar);
 		},
 		[activeSlot, avatarBuilderList],
