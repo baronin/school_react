@@ -61,7 +61,7 @@ const AvatarBuilder: FC<Props & AvatarBuilderProps> = ({ current, currentLevel, 
 				type="button"
 				className="avatar-builder__button-close"
 				aria-label="Close"
-				onClick={() => setOpenModal(true)}
+				onClick={() => setOpenModal(!isOpenModal)}
 			>
 				<svg className="avatar-builder__icon-close" width="16px" height="16px">
 					<use href={`${sprites}#close`} />

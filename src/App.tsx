@@ -52,15 +52,13 @@ const App = (): ReactElement => {
 						>
 							Toggle
 						</button>
-						{isShowAvatarBuilder ? (
+						{isShowAvatarBuilder && (
 							<AvatarBuilder
 								current={current}
 								availableItems={availableItems}
 								currentLevel={currentLevel}
 								closeModalWindow={closeModalWindow}
 							/>
-						) : (
-							''
 						)}
 					</div>
 				</div>
