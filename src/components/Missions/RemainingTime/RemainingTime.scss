@@ -1,0 +1,42 @@
+@import "./../../../assets/scss/reset";
+.time-left {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 8px;
+  display: flex;
+  align-items: center;
+  max-width: 70px;
+  padding: 2px 4px;
+
+  color: #000;
+  background-color: #fff;
+  border-radius: 11px;
+  &__icon {
+    margin-right: 4px;
+  }
+
+  &__text {
+    font-size: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__info {
+    display: none;
+
+    font-size: 10px;
+    line-height: 18px;
+  }
+}
+
+.time-left--time-is-over {
+  .time-left__text {
+    display: none;
+  }
+
+  .time-left__info {
+    display: block;
+  }
+}

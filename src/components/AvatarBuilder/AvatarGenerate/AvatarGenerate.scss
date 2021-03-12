@@ -1,0 +1,35 @@
+.avatar-generate {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	margin-bottom: 50px;
+	cursor: pointer;
+}
+
+.avatar-generate__title {
+	margin-bottom: 15px;
+	font-size: 18px;
+}
+
+.avatar-generate__wrap {
+	position: relative;
+	width: 301px;
+	height: 301px;
+	align-self: center;
+	border-radius: 50%;
+	box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.45);
+	overflow: hidden;
+
+	&--active {
+		box-shadow: 0 0 0 5px rgba(61, 188, 161, 1), 0 0 25px 0 rgba(0, 0, 0, 0.45);
+	}
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
+	}
+}
