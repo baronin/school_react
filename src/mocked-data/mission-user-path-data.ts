@@ -1,4 +1,4 @@
-import { MissionUserPathData } from '../types/types';
+import { MissionUserPathData } from '../components/Missions/types';
 
 const missionUserPathData: MissionUserPathData = {
 	pathId: 'uuid',
@@ -80,19 +80,19 @@ const missionUserPathData: MissionUserPathData = {
 			objectives: [
 				{
 					behaviorId: 'uuid1',
-					title: 'objective 1',
+					title: 'Objective 1',
 					amount: 1,
 					completed: 0,
 				},
 				{
 					behaviorId: 'uuid2',
-					title: 'objective 2',
+					title: 'Objective 2',
 					amount: 1,
 					completed: 0,
 				},
 				{
 					behaviorId: 'uuid3',
-					title: 'objective 3',
+					title: 'Objective 3',
 					amount: 1,
 					completed: 0,
 				},

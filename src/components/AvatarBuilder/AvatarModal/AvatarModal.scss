@@ -1,0 +1,58 @@
+.avatar-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0, 0.3);
+	transition: 0.3s ease;
+	z-index: 100;
+}
+
+.avatar-modal__inner {
+	max-width: 300px;
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+	background-color: white;
+	border-radius: 5px;
+}
+
+.avatar-modal__title {
+	margin-bottom: 20px;
+}
+
+.avatar-modal__button {
+	position: relative;
+	max-width: 70px;
+	width: 100%;
+	padding: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	font-weight: bold;
+	color: white;
+	background-size: 300% 100%;
+	background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+	box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+	border: none;
+	border-radius: 15px;
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	cursor: pointer;
+	&:focus {
+		outline: none;
+	}
+	&:hover {
+		background-position: 100% 0;
+		moz-transition: all .4s ease-in-out;
+		-o-transition: all .4s ease-in-out;
+		-webkit-transition: all .4s ease-in-out;
+		transition: all .4s ease-in-out;
+	}
+}

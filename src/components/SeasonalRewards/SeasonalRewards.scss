@@ -4,7 +4,6 @@
 	position: relative;
 	border: 1px solid $color-grey;
 	border-top-width: 0;
-
 }
 
 .seasonal-rewards__content {
@@ -16,7 +15,14 @@
 		right: 0;
 		width: 20px;
 		height: 100%;
-		background: linear-gradient(to right,#CCCCCC10, #CFCFCF);
+		background: linear-gradient(to right, #cccccc10, #cfcfcf);
+	}
+}
+
+.seasonal-rewards__content_shadow_disabled {
+	&::before {
+		content: none;
+		background: none;
 	}
 }
 
@@ -30,26 +36,28 @@
 	-webkit-overflow-scrolling: touch;
 	&::-webkit-scrollbar {
 		height: 6px;
-		// width: 2px;               /* width of the entire scrollbar */
 	}
 	&::-webkit-scrollbar-track {
-		background: #BFBFBF;        /* color of the tracking area */
+		background: #BFBFBF;
 	}
 	&::-webkit-scrollbar-thumb {
-		background-color: #3A3A3A;    /* color of the scroll thumb */
-		border-radius: 20px;       /* roundness of the scroll thumb */
-		border: 3px solid #3A3A3A;  /* creates padding around scroll thumb */
+		background-color: #3A3A3A;
+		border-radius: 20px;
+		border: 3px solid #3A3A3A;
 	}
 }
 
 .seasonal-rewards__item {
 	position: relative;
-  min-width: 80px;
-  width: 100%;
-  min-height: 94px;
+	max-width: 80px;
+	width: 100%;
+	min-height: 94px;
+	height: 100%;
+	flex-grow: 1;
+	flex-shrink: 0;
 	padding: 20px 10px 10px 10px;
-  border-top: 1px solid $color-grey;
-  border-right: 1px solid $color-grey;
+	border-top: 1px solid $color-grey;
+	border-right: 1px solid $color-grey;
 
   -webkit-user-select: none;
   -khtml-user-select: none;

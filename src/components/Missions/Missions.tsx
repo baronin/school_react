@@ -1,21 +1,15 @@
 import React, { FC, useState } from 'react';
-
-// scss
-import './Mission.scss';
-
-// components
-import RemainingTime from './remaining-time';
-import Reward from './reward';
-import Objective from './objective';
-
-// types
-import { MissionUserPathData, ObjectiveData } from '../../types/types';
+import RemainingTime from './RemainingTime';
+import Reward from './Reward';
+import Objective from './Objective';
+import { MissionUserPathData, ObjectiveData } from './types';
+import './Missions.scss';
 
 type Props = {
 	onObjectivePress?: (objective: ObjectiveData, index: number) => void;
 };
 
-const Mission: FC<MissionUserPathData & Props> = ({
+const Missions: FC<MissionUserPathData & Props> = ({
 	pathId,
 	pathName,
 	finalMissionNumber,
@@ -76,4 +70,4 @@ const Mission: FC<MissionUserPathData & Props> = ({
 	);
 };
 
-export default Mission;
+export default Missions;
