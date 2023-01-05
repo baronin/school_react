@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react';
+import { ReactElement, useState } from 'react';
 import Missions from './components/Missions';
 import CHeader from './components/CHeader';
 import SeasonalRewards from './components/SeasonalRewards';
